@@ -2,12 +2,6 @@ package structure
 
 import (
 	"fmt"
-	"github.com/pkg/errors"
-)
-
-var (
-	IndexOutOfRange = errors.New("index out of range")
-	FullArray       = errors.New("full array")
 )
 
 type Array struct {
@@ -39,17 +33,17 @@ func (a *Array) isIndexOutOfRange(index uint) bool {
 
 func (a *Array) Find(index uint) (int, error) {
 	if a.isIndexOutOfRange(index) {
-		return 0, IndexOutOfRange
+		return 0, ErrorIndexOutOfRange
 	}
 	return a.data[index], nil
 }
 
 func (a *Array) Insert(index uint, value int) error {
 	if a.Len() == uint(cap(a.data)) {
-		return FullArray
+		return ErrorFullArray
 	}
 	if a.isIndexOutOfRange(index) {
-		return IndexOutOfRange
+		return ErrorIndexOutOfRange
 	}
 	for i := a.length; i > index; i-- {
 		a.data[i] = a.data[i-1]
@@ -69,7 +63,7 @@ func (a *Array) InsertToHead(value int) error {
 
 func (a *Array) Delete(index uint) error {
 	if a.isIndexOutOfRange(index) {
-		return IndexOutOfRange
+		return ErrorIndexOutOfRange
 	}
 	for i := index; i < a.length-1; i++ {
 		a.data[index] = a.data[index+1]
