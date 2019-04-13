@@ -1,2 +1,3 @@
 # algorithm-go
-Go语言算法实现
+
+[![Build Status](https://travis-ci.com/lijinglin2019/algorithm-go.svg?branch=master)](https://travis-ci.com/lijinglin2019/algorithm-go)
