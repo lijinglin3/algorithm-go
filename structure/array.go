@@ -31,45 +31,45 @@ func (a *Array) isIndexOutOfRange(index uint) bool {
 	return false
 }
 
-func (a *Array) Find(index uint) (interface{}, error) {
+func (a *Array) Find(index uint) interface{} {
 	if a.isIndexOutOfRange(index) {
-		return 0, ErrorIndexOutOfRange
+		return nil
 	}
-	return a.data[index], nil
+	return a.data[index]
 }
 
-func (a *Array) Insert(index uint, value int) error {
+func (a *Array) Insert(index uint, value int) bool {
 	if a.Len() == uint(cap(a.data)) {
-		return ErrorFullArray
+		return false
 	}
 	if a.isIndexOutOfRange(index) {
-		return ErrorIndexOutOfRange
+		return false
 	}
 	for i := a.length; i > index; i-- {
 		a.data[i] = a.data[i-1]
 	}
 	a.data[index] = value
 	a.length++
-	return nil
+	return true
 }
 
-func (a *Array) InsertToTail(value int) error {
+func (a *Array) InsertToTail(value int) bool {
 	return a.Insert(a.length, value)
 }
 
-func (a *Array) InsertToHead(value int) error {
+func (a *Array) InsertToHead(value int) bool {
 	return a.Insert(0, value)
 }
 
-func (a *Array) Delete(index uint) error {
+func (a *Array) Delete(index uint) bool {
 	if a.isIndexOutOfRange(index) {
-		return ErrorIndexOutOfRange
+		return false
 	}
 	for i := index; i < a.length-1; i++ {
 		a.data[index] = a.data[index+1]
 	}
 	a.length--
-	return nil
+	return true
 }
 
 func (a *Array) String() string {

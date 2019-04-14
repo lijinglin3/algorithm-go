@@ -18,19 +18,19 @@ func NewLinkedList() *LinkedList {
 	return &LinkedList{&listNode{nil, 0}, 0}
 }
 
-func (list *LinkedList) InsertAfter(node *listNode, value interface{}) error {
+func (list *LinkedList) InsertAfter(node *listNode, value interface{}) bool {
 	if nil == node {
-		return ErrorNilPointerDereference
+		return false
 	}
 	newNode := &listNode{nil, value}
 	newNode.next, node.next = node.next, newNode
 	list.length++
-	return nil
+	return true
 }
 
-func (list *LinkedList) InsertBefore(node *listNode, value interface{}) error {
+func (list *LinkedList) InsertBefore(node *listNode, value interface{}) bool {
 	if nil == node || list.head == node {
-		return ErrorNilPointerDereference
+		return false
 	}
 	cur := list.head.next
 	pre := list.head
@@ -40,19 +40,16 @@ func (list *LinkedList) InsertBefore(node *listNode, value interface{}) error {
 		}
 	}
 	if nil == cur {
-		return ErrorNotFound
+		return false
 	}
-	if err := list.InsertAfter(pre, value); err != nil {
-		return err
-	}
-	return nil
+	return list.InsertAfter(pre, value)
 }
 
-func (list *LinkedList) InsertToHead(value interface{}) error {
+func (list *LinkedList) InsertToHead(value interface{}) bool {
 	return list.InsertAfter(list.head, value)
 }
 
-func (list *LinkedList) InsertToTail(value interface{}) error {
+func (list *LinkedList) InsertToTail(value interface{}) bool {
 	cur := list.head
 	for cur.next != nil {
 		cur = cur.next
@@ -71,9 +68,9 @@ func (list *LinkedList) FindByIndex(index uint) *listNode {
 	return cur
 }
 
-func (list *LinkedList) Delete(node *listNode) error {
+func (list *LinkedList) Delete(node *listNode) bool {
 	if nil == node {
-		return ErrorNilPointerDereference
+		return false
 	}
 	cur := list.head.next
 	pre := list.head
@@ -83,12 +80,12 @@ func (list *LinkedList) Delete(node *listNode) error {
 		}
 	}
 	if nil == cur {
-		return ErrorNotFound
+		return false
 	}
 	pre.next = cur.next
 	node = nil
 	list.length--
-	return nil
+	return true
 }
 
 func (list *LinkedList) String() string {

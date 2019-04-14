@@ -8,9 +8,9 @@ func TestInsert(t *testing.T) {
 	capacity := 10
 	arr := NewArray(uint(capacity))
 	for i := 0; i < capacity-2; i++ {
-		err := arr.Insert(uint(i), i+1)
-		if nil != err {
-			t.Fatal(err.Error())
+
+		if !arr.Insert(uint(i), i+1) {
+			t.Fatal("insert fail")
 		}
 	}
 	t.Log(arr)
@@ -26,17 +26,15 @@ func TestDelete(t *testing.T) {
 	capacity := 10
 	arr := NewArray(uint(capacity))
 	for i := 0; i < capacity; i++ {
-		err := arr.Insert(uint(i), i+1)
-		if nil != err {
-			t.Fatal(err.Error())
+		if !arr.Insert(uint(i), i+1) {
+			t.Fatal("insert fail")
 		}
 	}
 	t.Log(arr)
 
 	for i := 9; i >= 0; i-- {
-		err := arr.Delete(uint(i))
-		if nil != err {
-			t.Fatal(err)
+		if !arr.Delete(uint(i)) {
+			t.Fatal("delete fail")
 		}
 		t.Log(arr)
 	}
@@ -46,9 +44,8 @@ func TestFind(t *testing.T) {
 	capacity := 10
 	arr := NewArray(uint(capacity))
 	for i := 0; i < capacity; i++ {
-		err := arr.Insert(uint(i), i+1)
-		if nil != err {
-			t.Fatal(err.Error())
+		if !arr.Insert(uint(i), i+1) {
+			t.Fatal("insert fail")
 		}
 	}
 	t.Log(arr)

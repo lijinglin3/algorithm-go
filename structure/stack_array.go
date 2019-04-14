@@ -21,13 +21,13 @@ func (stack *ArrayStack) IsEmpty() bool {
 	return false
 }
 
-func (stack *ArrayStack) Push(value interface{}) error {
+func (stack *ArrayStack) Push(value interface{}) bool {
 	if cap(stack.data) == stack.top+1 {
-		return ErrorFullArray
+		return false
 	}
 	stack.top++
 	stack.data[stack.top] = value
-	return nil
+	return true
 }
 
 func (stack *ArrayStack) Pop() interface{} {
