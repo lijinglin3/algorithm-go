@@ -46,6 +46,10 @@ func (stack *ArrayStack) Top() interface{} {
 	return stack.data[stack.top]
 }
 
+func (stack *ArrayStack) Flush() {
+	stack.top = -1
+}
+
 func (stack *ArrayStack) Print() {
 	if stack.IsEmpty() {
 		fmt.Println([]interface{}{})

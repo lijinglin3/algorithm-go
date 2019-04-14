@@ -111,13 +111,13 @@ func (list *LinkedList) Delete(node *ListNode) error {
 func (list *LinkedList) Print() {
 	if nil == list.head.next {
 		fmt.Println("")
-		return
+	} else {
+		str := "top"
+		cur := list.head.next
+		for cur != nil {
+			str += fmt.Sprintf(" --> %+v", cur.value)
+			cur = cur.next
+		}
+		fmt.Println(str)
 	}
-	str := fmt.Sprintf("%+v", list.head.next.value)
-	cur := list.head.next.next
-	for cur != nil {
-		str += fmt.Sprintf(" --> %+v", cur.value)
-		cur = cur.next
-	}
-	fmt.Println(str)
 }
