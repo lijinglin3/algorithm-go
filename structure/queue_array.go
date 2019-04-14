@@ -57,14 +57,14 @@ func (queue *ArrayQueue) DeQueue() interface{} {
 	return value
 }
 
-func (queue *ArrayQueue) Print() {
+func (queue *ArrayQueue) String() string {
 	if queue.IsEmpty() {
-		fmt.Println("empty queue")
+		return "empty queue"
 	} else {
 		str := "head"
 		for _, v := range queue.data[queue.head:queue.tail] {
 			str += fmt.Sprintf(" --> %+v", v)
 		}
-		fmt.Printf(str + " --> tail\n")
+		return str + " --> tail\n"
 	}
 }

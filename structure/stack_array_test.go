@@ -13,7 +13,7 @@ func TestArrayStackPush(t *testing.T) {
 	t.Log(s.Pop())
 	t.Log(s.Pop())
 	t.Log(s.Pop())
-	s.Print()
+	t.Log(s)
 }
 
 func TestArrayStackPop(t *testing.T) {
@@ -21,13 +21,13 @@ func TestArrayStackPop(t *testing.T) {
 	_ = s.Push(1)
 	_ = s.Push(2)
 	_ = s.Push(3)
-	s.Print()
+	t.Log(s)
 
 	t.Log(s.Pop())
 	t.Log(s.Pop())
 	t.Log(s.Pop())
 	t.Log(s.Pop())
-	s.Print()
+	t.Log(s)
 }
 
 func TestArrayStackTop(t *testing.T) {

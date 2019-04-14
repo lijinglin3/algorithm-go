@@ -13,13 +13,13 @@ func TestInsert(t *testing.T) {
 			t.Fatal(err.Error())
 		}
 	}
-	arr.Print()
+	t.Log(arr)
 
 	_ = arr.Insert(uint(6), 999)
-	arr.Print()
+	t.Log(arr)
 
 	_ = arr.InsertToTail(666)
-	arr.Print()
+	t.Log(arr)
 }
 
 func TestDelete(t *testing.T) {
@@ -31,14 +31,14 @@ func TestDelete(t *testing.T) {
 			t.Fatal(err.Error())
 		}
 	}
-	arr.Print()
+	t.Log(arr)
 
 	for i := 9; i >= 0; i-- {
 		err := arr.Delete(uint(i))
 		if nil != err {
 			t.Fatal(err)
 		}
-		arr.Print()
+		t.Log(arr)
 	}
 }
 
@@ -51,7 +51,7 @@ func TestFind(t *testing.T) {
 			t.Fatal(err.Error())
 		}
 	}
-	arr.Print()
+	t.Log(arr)
 
 	t.Log(arr.Find(0))
 	t.Log(arr.Find(9))

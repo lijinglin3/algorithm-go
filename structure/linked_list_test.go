@@ -7,7 +7,7 @@ func TestInsertToHead(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		_ = l.InsertToHead(i + 1)
 	}
-	l.Print()
+	t.Log(l)
 }
 
 func TestInsertToTail(t *testing.T) {
@@ -15,7 +15,7 @@ func TestInsertToTail(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		_ = l.InsertToTail(i + 1)
 	}
-	l.Print()
+	t.Log(l)
 }
 
 func TestFindByIndex(t *testing.T) {
@@ -34,11 +34,11 @@ func TestDeleteNode(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		_ = list.InsertToTail(i + 1)
 	}
-	list.Print()
+	t.Log(list)
 
 	t.Log(list.Delete(list.head.next))
-	list.Print()
+	t.Log(list)
 
 	t.Log(list.Delete(list.head.next.next))
-	list.Print()
+	t.Log(list)
 }

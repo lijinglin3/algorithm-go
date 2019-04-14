@@ -108,9 +108,9 @@ func (list *LinkedList) Delete(node *ListNode) error {
 	return nil
 }
 
-func (list *LinkedList) Print() {
+func (list *LinkedList) String() string {
 	if nil == list.head.next {
-		fmt.Println("")
+		return ""
 	} else {
 		str := "top"
 		cur := list.head.next
@@ -118,6 +118,6 @@ func (list *LinkedList) Print() {
 			str += fmt.Sprintf(" --> %+v", cur.value)
 			cur = cur.next
 		}
-		fmt.Println(str)
+		return str
 	}
 }

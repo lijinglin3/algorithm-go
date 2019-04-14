@@ -7,7 +7,7 @@ func TestLinkedListStackPush(t *testing.T) {
 	s.Push(1)
 	s.Push(2)
 	s.Push(3)
-	s.Print()
+	t.Log(s)
 }
 
 func TestLinkedListStackPop(t *testing.T) {
@@ -15,13 +15,13 @@ func TestLinkedListStackPop(t *testing.T) {
 	s.Push(1)
 	s.Push(2)
 	s.Push(3)
-	s.Print()
+	t.Log(s)
 
 	t.Log(s.Pop())
 	t.Log(s.Pop())
 	t.Log(s.Pop())
 	t.Log(s.Pop())
-	s.Print()
+	t.Log(s)
 }
 
 func TestLinkedListStackTop(t *testing.T) {

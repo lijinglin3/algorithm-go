@@ -72,10 +72,10 @@ func (a *Array) Delete(index uint) error {
 	return nil
 }
 
-func (a *Array) Print() {
+func (a *Array) String() string {
 	if a.length == 0 {
-		fmt.Println([]int{})
+		return fmt.Sprintln([]int{})
 	} else {
-		fmt.Println(a.data[0 : a.length-1])
+		return fmt.Sprintln(a.data[0 : a.length-1])
 	}
 }

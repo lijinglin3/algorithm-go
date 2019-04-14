@@ -46,9 +46,9 @@ func (stack *LinkedListStack) Flush() {
 	stack.top = nil
 }
 
-func (stack *LinkedListStack) Print() {
+func (stack *LinkedListStack) String() string {
 	if stack.IsEmpty() {
-		fmt.Println("empty stack")
+		return "empty stack"
 	} else {
 		str := "top"
 		cur := stack.top
@@ -56,6 +56,6 @@ func (stack *LinkedListStack) Print() {
 			str += fmt.Sprintf(" --> %+v", cur.value)
 			cur = cur.next
 		}
-		fmt.Println(str)
+		return str
 	}
 }

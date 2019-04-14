@@ -50,10 +50,10 @@ func (stack *ArrayStack) Flush() {
 	stack.top = -1
 }
 
-func (stack *ArrayStack) Print() {
+func (stack *ArrayStack) String() string {
 	if stack.IsEmpty() {
-		fmt.Println([]interface{}{})
+		return fmt.Sprintln([]interface{}{})
 	} else {
-		fmt.Println(stack.data[0:stack.top])
+		return fmt.Sprintln(stack.data[0:stack.top])
 	}
 }
