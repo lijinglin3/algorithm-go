@@ -1,6 +1,8 @@
 language: go
 go:
-  - 1.12.x
+  - master
 
 script:
-  - go test -v ./...
+  - "[ $(go fmt ./... | wc -l) -eq 0 ]"
+  - "go vet ./..."
+  - "go test -v -race ./..."
