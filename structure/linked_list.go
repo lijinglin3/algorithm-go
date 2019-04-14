@@ -116,7 +116,7 @@ func (list *LinkedList) Print() {
 	str := fmt.Sprintf("%+v", list.head.next.value)
 	cur := list.head.next.next
 	for cur != nil {
-		str += fmt.Sprintf("--> %+v", cur.value)
+		str += fmt.Sprintf(" --> %+v", cur.value)
 		cur = cur.next
 	}
 	fmt.Println(str)

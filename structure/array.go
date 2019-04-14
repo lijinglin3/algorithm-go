@@ -5,7 +5,7 @@ import (
 )
 
 type Array struct {
-	data   []int
+	data   []interface{}
 	length uint
 }
 
@@ -14,7 +14,7 @@ func NewArray(capacity uint) *Array {
 		return nil
 	} else {
 		return &Array{
-			data:   make([]int, capacity, capacity),
+			data:   make([]interface{}, capacity, capacity),
 			length: 0,
 		}
 	}
@@ -31,7 +31,7 @@ func (a *Array) isIndexOutOfRange(index uint) bool {
 	return false
 }
 
-func (a *Array) Find(index uint) (int, error) {
+func (a *Array) Find(index uint) (interface{}, error) {
 	if a.isIndexOutOfRange(index) {
 		return 0, ErrorIndexOutOfRange
 	}
