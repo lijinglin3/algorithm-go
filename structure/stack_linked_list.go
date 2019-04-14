@@ -2,13 +2,13 @@ package structure
 
 import "fmt"
 
-type node struct {
-	next  *node
+type stackNode struct {
+	next  *stackNode
 	value interface{}
 }
 
 type LinkedListStack struct {
-	top *node // 栈顶节点
+	top *stackNode // 栈顶节点
 }
 
 func NewLinkedListStack() *LinkedListStack {
@@ -23,7 +23,7 @@ func (stack *LinkedListStack) IsEmpty() bool {
 }
 
 func (stack *LinkedListStack) Push(value interface{}) {
-	stack.top = &node{nil, value}
+	stack.top = &stackNode{nil, value}
 }
 
 func (stack *LinkedListStack) Pop() interface{} {
@@ -51,10 +51,8 @@ func (stack *LinkedListStack) String() string {
 		return "empty stack"
 	} else {
 		str := "top"
-		cur := stack.top
-		for cur != nil {
+		for cur := stack.top; cur != nil; cur = cur.next {
 			str += fmt.Sprintf(" --> %+v", cur.value)
-			cur = cur.next
 		}
 		return str
 	}

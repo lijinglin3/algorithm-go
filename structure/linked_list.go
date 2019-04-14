@@ -4,60 +4,45 @@ import (
 	"fmt"
 )
 
-type ListNode struct {
-	next  *ListNode
+type listNode struct {
+	next  *listNode
 	value interface{}
 }
 
 type LinkedList struct {
-	head   *ListNode
+	head   *listNode
 	length uint
 }
 
-func NewListNode(value interface{}) *ListNode {
-	return &ListNode{nil, value}
-}
-
-func (node *ListNode) Next() *ListNode {
-	return node.next
-}
-
-func (node *ListNode) Value() interface{} {
-	return node.value
-}
-
 func NewLinkedList() *LinkedList {
-	return &LinkedList{NewListNode(0), 0}
+	return &LinkedList{&listNode{nil, 0}, 0}
 }
 
-func (list *LinkedList) InsertAfter(node *ListNode, value interface{}) error {
+func (list *LinkedList) InsertAfter(node *listNode, value interface{}) error {
 	if nil == node {
 		return ErrorNilPointerDereference
 	}
-	newNode := NewListNode(value)
-	newNode.next, node.next = node.Next(), newNode
+	newNode := &listNode{nil, value}
+	newNode.next, node.next = node.next, newNode
 	list.length++
 	return nil
 }
 
-func (list *LinkedList) InsertBefore(node *ListNode, value interface{}) error {
+func (list *LinkedList) InsertBefore(node *listNode, value interface{}) error {
 	if nil == node || list.head == node {
 		return ErrorNilPointerDereference
 	}
 	cur := list.head.next
-	preNode := list.head
-	for cur != nil {
+	pre := list.head
+	for ; cur != nil; cur, pre = cur.next, pre.next {
 		if cur == node {
 			break
-		} else {
-			cur = cur.next
-			preNode = preNode.next
 		}
 	}
 	if nil == cur {
 		return ErrorNotFound
 	}
-	if err := list.InsertAfter(preNode, value); err != nil {
+	if err := list.InsertAfter(pre, value); err != nil {
 		return err
 	}
 	return nil
@@ -75,7 +60,7 @@ func (list *LinkedList) InsertToTail(value interface{}) error {
 	return list.InsertAfter(cur, value)
 }
 
-func (list *LinkedList) FindByIndex(index uint) *ListNode {
+func (list *LinkedList) FindByIndex(index uint) *listNode {
 	if index >= list.length {
 		return nil
 	}
@@ -86,18 +71,16 @@ func (list *LinkedList) FindByIndex(index uint) *ListNode {
 	return cur
 }
 
-func (list *LinkedList) Delete(node *ListNode) error {
+func (list *LinkedList) Delete(node *listNode) error {
 	if nil == node {
 		return ErrorNilPointerDereference
 	}
 	cur := list.head.next
 	pre := list.head
-	for cur != nil {
+	for ; cur != nil; cur, pre = cur.next, pre.next {
 		if cur == node {
 			break
 		}
-		cur = cur.next
-		pre = pre.next
 	}
 	if nil == cur {
 		return ErrorNotFound
@@ -113,10 +96,8 @@ func (list *LinkedList) String() string {
 		return ""
 	} else {
 		str := "top"
-		cur := list.head.next
-		for cur != nil {
+		for cur := list.head.next; cur != nil; cur = cur.next {
 			str += fmt.Sprintf(" --> %+v", cur.value)
-			cur = cur.next
 		}
 		return str
 	}
