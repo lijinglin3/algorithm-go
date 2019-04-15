@@ -3,6 +3,4 @@ go:
   - master
 
 script:
-  - "[ $(go fmt ./... | wc -l) -eq 0 ]"
-  - "go vet ./..."
-  - "go test -v -race ./..."
+  - make
