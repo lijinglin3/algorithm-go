@@ -17,34 +17,34 @@ func NewLinkedListQueue() *LinkedListQueue {
 	return &LinkedListQueue{nil, nil, 0}
 }
 
-func (this *LinkedListQueue) EnQueue(value interface{}) {
+func (queue *LinkedListQueue) EnQueue(value interface{}) {
 	node := &queueNode{value, nil}
-	if nil == this.tail {
-		this.tail = node
-		this.head = node
+	if nil == queue.tail {
+		queue.tail = node
+		queue.head = node
 	} else {
-		this.tail.next = node
-		this.tail = node
+		queue.tail.next = node
+		queue.tail = node
 	}
-	this.length++
+	queue.length++
 }
 
-func (this *LinkedListQueue) DeQueue() interface{} {
-	if this.head == nil {
+func (queue *LinkedListQueue) DeQueue() interface{} {
+	if queue.head == nil {
 		return nil
 	}
-	v := this.head.val
-	this.head = this.head.next
-	this.length--
+	v := queue.head.val
+	queue.head = queue.head.next
+	queue.length--
 	return v
 }
 
-func (this *LinkedListQueue) String() string {
-	if this.head == nil {
+func (queue *LinkedListQueue) String() string {
+	if queue.head == nil {
 		return "empty queue"
 	} else {
 		result := "head"
-		for cur := this.head; cur != nil; cur = cur.next {
+		for cur := queue.head; cur != nil; cur = cur.next {
 			result += fmt.Sprintf(" --> %+v", cur.val)
 		}
 		result += "--> tail"

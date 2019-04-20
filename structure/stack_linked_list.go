@@ -23,7 +23,7 @@ func (stack *LinkedListStack) IsEmpty() bool {
 }
 
 func (stack *LinkedListStack) Push(value interface{}) {
-	stack.top = &stackNode{nil, value}
+	stack.top = &stackNode{stack.top, value}
 }
 
 func (stack *LinkedListStack) Pop() interface{} {
@@ -54,6 +54,6 @@ func (stack *LinkedListStack) String() string {
 		for cur := stack.top; cur != nil; cur = cur.next {
 			str += fmt.Sprintf(" --> %+v", cur.value)
 		}
-		return str
+		return str + " --> tail"
 	}
 }

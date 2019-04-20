@@ -2,43 +2,71 @@ package structure
 
 import "testing"
 
-func TestInsertToHead(t *testing.T) {
+func TestLinkedList_Insert(t *testing.T) {
 	l := NewLinkedList()
-	for i := 0; i < 10; i++ {
-		_ = l.InsertToHead(i + 1)
+	t.Log(l)
+	if !l.IsEmpty() {
+		t.Fatal()
+	}
+	if !l.Insert(0, 0) {
+		t.Fatal("insert failed")
 	}
 	t.Log(l)
+	if l.IsEmpty() {
+		t.Fatal()
+	}
+	if l.Insert(100, 100) {
+		t.Fatal("insert failed")
+	}
 }
 
-func TestInsertToTail(t *testing.T) {
+func TestLinkedList_InsertToTail(t *testing.T) {
+	l := NewLinkedList()
+	for i := 0; i < 10; i++ {
+		if !l.InsertToTail(i + 1) {
+			t.Fatal("insert to tail failed")
+		}
+	}
+}
+
+func TestLinkedList_InsertToHead(t *testing.T) {
+	l := NewLinkedList()
+	for i := 0; i < 10; i++ {
+		if !l.InsertToHead(i + 1) {
+			t.Fatal("insert to head failed")
+		}
+	}
+}
+
+func TestLinkedList_Find(t *testing.T) {
 	l := NewLinkedList()
 	for i := 0; i < 10; i++ {
 		_ = l.InsertToTail(i + 1)
 	}
-	t.Log(l)
-}
-
-func TestFindByIndex(t *testing.T) {
-	l := NewLinkedList()
-	for i := 0; i < 10; i++ {
-		_ = l.InsertToTail(i + 1)
+	if 1 != l.Find(0) {
+		t.Fatal()
 	}
-	t.Log(l.FindByIndex(0))
-	t.Log(l.FindByIndex(9))
-	t.Log(l.FindByIndex(5))
-	t.Log(l.FindByIndex(11))
+	if 10 != l.Find(9) {
+		t.Fatal()
+	}
+	if nil != l.Find(11) {
+		t.Fatal()
+	}
 }
 
-func TestDeleteNode(t *testing.T) {
+func TestLinkedList_Delete(t *testing.T) {
 	list := NewLinkedList()
 	for i := 0; i < 3; i++ {
-		_ = list.InsertToTail(i + 1)
+		list.InsertToTail(i + 1)
 	}
-	t.Log(list)
 
-	t.Log(list.Delete(list.head.next))
-	t.Log(list)
-
-	t.Log(list.Delete(list.head.next.next))
-	t.Log(list)
+	if !list.Delete(1) {
+		t.Fatal()
+	}
+	if !list.Delete(0) {
+		t.Fatal()
+	}
+	if list.Delete(3) {
+		t.Fatal()
+	}
 }

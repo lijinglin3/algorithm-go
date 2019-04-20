@@ -65,6 +65,6 @@ func (queue *ArrayQueue) String() string {
 		for _, v := range queue.data[queue.head:queue.tail] {
 			str += fmt.Sprintf(" --> %+v", v)
 		}
-		return str + " --> tail\n"
+		return str + " --> tail"
 	}
 }

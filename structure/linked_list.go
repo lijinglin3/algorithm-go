@@ -15,87 +15,87 @@ type LinkedList struct {
 }
 
 func NewLinkedList() *LinkedList {
-	return &LinkedList{&listNode{nil, 0}, 0}
+	return &LinkedList{nil, 0}
 }
 
-func (list *LinkedList) InsertAfter(node *listNode, value interface{}) bool {
-	if nil == node {
-		return false
+func (list *LinkedList) isIndexOutOfRange(index uint) bool {
+	if index >= list.length {
+		return true
 	}
-	newNode := &listNode{nil, value}
-	newNode.next, node.next = node.next, newNode
+	return false
+}
+
+func (list *LinkedList) Insert(index uint, value interface{}) bool {
+	if 0 == index {
+		list.head = &listNode{list.head, value}
+	} else {
+		if list.isIndexOutOfRange(index - 1) {
+			return false
+		}
+		node := list.findNodeByIndex(index - 1)
+		node.next = &listNode{node.next, value}
+	}
 	list.length++
 	return true
 }
 
-func (list *LinkedList) InsertBefore(node *listNode, value interface{}) bool {
-	if nil == node || list.head == node {
-		return false
+func (list *LinkedList) IsEmpty() bool {
+	if nil == list.head {
+		return true
 	}
-	cur := list.head.next
-	pre := list.head
-	for ; cur != nil; cur, pre = cur.next, pre.next {
-		if cur == node {
-			break
-		}
-	}
-	if nil == cur {
-		return false
-	}
-	return list.InsertAfter(pre, value)
+	return false
 }
 
 func (list *LinkedList) InsertToHead(value interface{}) bool {
-	return list.InsertAfter(list.head, value)
+	return list.Insert(0, value)
 }
 
 func (list *LinkedList) InsertToTail(value interface{}) bool {
-	cur := list.head
-	for cur.next != nil {
-		cur = cur.next
-	}
-	return list.InsertAfter(cur, value)
+	return list.Insert(list.length, value)
 }
 
-func (list *LinkedList) FindByIndex(index uint) *listNode {
-	if index >= list.length {
+func (list *LinkedList) findNodeByIndex(index uint) *listNode {
+	if list.isIndexOutOfRange(index) {
 		return nil
 	}
-	cur := list.head.next
+	cur := list.head
 	for i := uint(0); i < index; i++ {
 		cur = cur.next
 	}
 	return cur
 }
 
-func (list *LinkedList) Delete(node *listNode) bool {
+func (list *LinkedList) Find(index uint) interface{} {
+	node := list.findNodeByIndex(index)
 	if nil == node {
-		return false
+		return nil
+	} else {
+		return node.value
 	}
-	cur := list.head.next
-	pre := list.head
-	for ; cur != nil; cur, pre = cur.next, pre.next {
-		if cur == node {
-			break
+}
+
+func (list *LinkedList) Delete(index uint) bool {
+	if 0 == index {
+		list.head = list.head.next
+	} else {
+		if list.isIndexOutOfRange(index - 1) {
+			return false
 		}
+		node := list.findNodeByIndex(index - 1)
+		node.next = node.next.next
 	}
-	if nil == cur {
-		return false
-	}
-	pre.next = cur.next
-	node = nil
 	list.length--
 	return true
 }
 
 func (list *LinkedList) String() string {
-	if nil == list.head.next {
+	if nil == list.head {
 		return ""
 	} else {
-		str := "top"
-		for cur := list.head.next; cur != nil; cur = cur.next {
+		str := "head"
+		for cur := list.head; cur != nil; cur = cur.next {
 			str += fmt.Sprintf(" --> %+v", cur.value)
 		}
-		return str
+		return str + " --> tail"
 	}
 }

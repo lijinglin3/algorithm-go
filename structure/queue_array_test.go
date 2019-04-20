@@ -2,6 +2,12 @@ package structure
 
 import "testing"
 
+func TestNewArrayQueue(t *testing.T) {
+	if q := NewArrayQueue(0); q != nil {
+		t.Fail()
+	}
+}
+
 func TestArrayQueue_EnQueue(t *testing.T) {
 	q := NewArrayQueue(5)
 	q.EnQueue(1)
@@ -23,9 +29,6 @@ func TestArrayQueue_DeQueue(t *testing.T) {
 	q.EnQueue(1)
 	q.EnQueue(2)
 	q.EnQueue(3)
-	q.EnQueue(4)
-	q.EnQueue(5)
-	q.EnQueue(6)
 	t.Log(q)
 	q.DeQueue()
 	t.Log(q)
@@ -35,6 +38,7 @@ func TestArrayQueue_DeQueue(t *testing.T) {
 	t.Log(q)
 	q.DeQueue()
 	t.Log(q)
-	q.DeQueue()
+
+	q.EnQueue(10)
 	t.Log(q)
 }

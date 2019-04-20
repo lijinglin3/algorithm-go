@@ -45,3 +45,15 @@ func TestArrayStackTop(t *testing.T) {
 	t.Log(s.Top())
 	s.Pop()
 }
+
+func TestArrayStack_Flush(t *testing.T) {
+	s := NewArrayStack(3)
+	_ = s.Push(1)
+	_ = s.Push(2)
+	_ = s.Push(3)
+	t.Log(s)
+
+	if s.Flush(); !s.IsEmpty() {
+		t.Fail()
+	}
+}
