@@ -1,1 +1,1 @@
-# [两数之和](https://leetcode-cn.com/problems/two-sum/)
+# [Two Sum](https://leetcode.com/problems/two-sum/)
