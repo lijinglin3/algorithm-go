@@ -1,1 +1,1 @@
-# [整数反转](https://leetcode-cn.com/problems/reverse-integer/)
+# [Reverse Integer](https://leetcode.com/problems/reverse-integer/)

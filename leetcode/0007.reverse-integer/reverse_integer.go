@@ -1,6 +1,8 @@
 package leetcode
 
-import "math"
+import (
+	"math"
+)
 
 func reverse(x int) int {
 	v := 0
@@ -8,9 +10,8 @@ func reverse(x int) int {
 		v = v*10 + x%10
 		x = x / 10
 	}
-	// 判断溢出
-	if v-math.MaxInt32 > 0 || v-math.MinInt32 < 0 {
-		v = 0
+	if v > math.MaxInt32 || v < math.MinInt32 {
+		return 0
 	}
 	return v
 }
