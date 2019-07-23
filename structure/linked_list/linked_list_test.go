@@ -1,17 +1,15 @@
-package structure
+package linked_list
 
 import "testing"
 
 func TestLinkedList_Insert(t *testing.T) {
 	l := NewLinkedList()
-	t.Log(l)
 	if !l.IsEmpty() {
 		t.Fatal()
 	}
 	if !l.Insert(0, 0) {
 		t.Fatal("insert failed")
 	}
-	t.Log(l)
 	if l.IsEmpty() {
 		t.Fatal()
 	}
@@ -40,9 +38,11 @@ func TestLinkedList_InsertToHead(t *testing.T) {
 
 func TestLinkedList_Find(t *testing.T) {
 	l := NewLinkedList()
+	t.Log(l)
 	for i := 0; i < 10; i++ {
 		_ = l.InsertToTail(i + 1)
 	}
+	t.Log(l)
 	if 1 != l.Find(0) {
 		t.Fatal()
 	}
