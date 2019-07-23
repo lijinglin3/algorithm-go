@@ -1,4 +1,4 @@
-package structure
+package array
 
 import (
 	"testing"
@@ -13,9 +13,9 @@ func TestNewArray(t *testing.T) {
 
 func TestArray_Insert(t *testing.T) {
 	capacity := 10
-	arr := NewArray(uint(capacity))
+	arr := NewArray(capacity)
 	for i := 0; i < capacity-1; i++ {
-		if !arr.Insert(uint(i), i+1) {
+		if !arr.Insert(i, i+1) {
 			t.Fatal("insert fail")
 		}
 	}
@@ -51,16 +51,16 @@ func TestArray_InsertToTail(t *testing.T) {
 
 func TestArray_Delete(t *testing.T) {
 	capacity := 10
-	arr := NewArray(uint(capacity))
+	arr := NewArray(capacity)
 	for i := 0; i < capacity; i++ {
-		if !arr.Insert(uint(i), i+1) {
+		if !arr.Insert(i, i+1) {
 			t.Fatal("insert failed")
 		}
 	}
 	t.Log(arr)
 
 	for i := 0; i < capacity; i++ {
-		if !arr.Delete(uint(i)) {
+		if !arr.Delete(i) {
 			t.Fatal("delete failed")
 		}
 	}
@@ -73,9 +73,9 @@ func TestArray_Delete(t *testing.T) {
 
 func TestArray_Find(t *testing.T) {
 	capacity := 10
-	arr := NewArray(uint(capacity))
+	arr := NewArray(capacity)
 	for i := 0; i < capacity; i++ {
-		if !arr.Insert(uint(i), i+1) {
+		if !arr.Insert(i, i+1) {
 			t.Fatal("insert fail")
 		}
 	}

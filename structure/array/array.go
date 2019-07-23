@@ -1,4 +1,4 @@
-package structure
+package array
 
 import (
 	"fmt"
@@ -6,43 +6,42 @@ import (
 
 type Array struct {
 	data   []interface{}
-	length uint
+	length int
 }
 
-func NewArray(capacity uint) *Array {
-	if capacity == 0 {
-		return nil
-	} else {
+func NewArray(capacity int) *Array {
+	if capacity > 0 {
 		return &Array{
 			data:   make([]interface{}, capacity, capacity),
 			length: 0,
 		}
 	}
+	return nil
 }
 
-func (a *Array) Len() uint {
+func (a *Array) Len() int {
 	return a.length
 }
 
-func (a *Array) isIndexOutOfRange(index uint) bool {
-	if index >= uint(cap(a.data)) {
+func (a *Array) outOfRange(index int) bool {
+	if index >= cap(a.data) || index < 0 {
 		return true
 	}
 	return false
 }
 
-func (a *Array) Find(index uint) interface{} {
-	if a.isIndexOutOfRange(index) {
+func (a *Array) Find(index int) interface{} {
+	if a.outOfRange(index) {
 		return nil
 	}
 	return a.data[index]
 }
 
-func (a *Array) Insert(index uint, value int) bool {
-	if a.Len() == uint(cap(a.data)) {
+func (a *Array) Insert(index int, value interface{}) bool {
+	if a.Len() == cap(a.data) {
 		return false
 	}
-	if a.isIndexOutOfRange(index) {
+	if a.outOfRange(index) {
 		return false
 	}
 	for i := a.length; i > index; i-- {
@@ -53,16 +52,16 @@ func (a *Array) Insert(index uint, value int) bool {
 	return true
 }
 
-func (a *Array) InsertToTail(value int) bool {
+func (a *Array) InsertToTail(value interface{}) bool {
 	return a.Insert(a.length, value)
 }
 
-func (a *Array) InsertToHead(value int) bool {
+func (a *Array) InsertToHead(value interface{}) bool {
 	return a.Insert(0, value)
 }
 
-func (a *Array) Delete(index uint) bool {
-	if a.isIndexOutOfRange(index) {
+func (a *Array) Delete(index int) bool {
+	if a.outOfRange(index) {
 		return false
 	}
 	for i := index; i < a.length-1; i++ {
