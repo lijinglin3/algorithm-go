@@ -1,14 +1,14 @@
-package structure
+package stack
 
 import "fmt"
 
-type stackNode struct {
-	next  *stackNode
+type node struct {
+	next  *node
 	value interface{}
 }
 
 type LinkedListStack struct {
-	top *stackNode // 栈顶节点
+	top *node // 栈顶节点
 }
 
 func NewLinkedListStack() *LinkedListStack {
@@ -23,7 +23,7 @@ func (stack *LinkedListStack) IsEmpty() bool {
 }
 
 func (stack *LinkedListStack) Push(value interface{}) {
-	stack.top = &stackNode{stack.top, value}
+	stack.top = &node{stack.top, value}
 }
 
 func (stack *LinkedListStack) Pop() interface{} {

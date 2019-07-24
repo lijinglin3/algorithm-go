@@ -1,28 +1,28 @@
-package structure
+package stack
 
 import "testing"
 
 func TestLinkedListStack_Push(t *testing.T) {
 	s := NewLinkedListStack()
-	s.Push(1)
-	s.Push(2)
-	s.Push(3)
+	for i := 0; i < 10; i++ {
+		s.Push(i)
+	}
 	t.Log(s)
 }
 
 func TestLinkedListStack_Pop(t *testing.T) {
 	s := NewLinkedListStack()
-	s.Push(1)
-	s.Push(2)
-	s.Push(3)
-
-	if s.Pop() != 3 {
-		t.Fatal("pop failed")
+	for i := 0; i < 3; i++ {
+		s.Push(i)
 	}
+
 	if s.Pop() != 2 {
 		t.Fatal("pop failed")
 	}
 	if s.Pop() != 1 {
+		t.Fatal("pop failed")
+	}
+	if s.Pop() != 0 {
 		t.Fatal("pop failed")
 	}
 	if s.Pop() != nil {
@@ -45,11 +45,11 @@ func TestLinkedListStack_Top(t *testing.T) {
 
 func TestLinkedListStack_Flush(t *testing.T) {
 	s := NewLinkedListStack()
-	s.Push(1)
-	s.Push(2)
-	s.Push(3)
+	for i := 0; i < 10; i++ {
+		s.Push(i)
+	}
 
 	if s.Flush(); !s.IsEmpty() {
-		t.Fail()
+		t.Fatal("flush failed")
 	}
 }

@@ -1,4 +1,4 @@
-package structure
+package stack
 
 import "fmt"
 
@@ -7,7 +7,7 @@ type ArrayStack struct {
 	top  int           // 栈顶指针
 }
 
-func NewArrayStack(capacity uint) *ArrayStack {
+func NewArrayStack(capacity int) *ArrayStack {
 	return &ArrayStack{
 		data: make([]interface{}, capacity, capacity),
 		top:  -1,
@@ -54,6 +54,6 @@ func (stack *ArrayStack) String() string {
 	if stack.IsEmpty() {
 		return fmt.Sprintln([]interface{}{})
 	} else {
-		return fmt.Sprintln(stack.data[0:stack.top])
+		return fmt.Sprintln(stack.data[0:stack.top+1])
 	}
 }
