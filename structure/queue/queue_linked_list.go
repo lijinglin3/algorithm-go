@@ -1,15 +1,15 @@
-package structure
+package queue
 
 import "fmt"
 
-type queueNode struct {
+type node struct {
 	val  interface{}
-	next *queueNode
+	next *node
 }
 
 type LinkedListQueue struct {
-	head   *queueNode
-	tail   *queueNode
+	head   *node
+	tail   *node
 	length int
 }
 
@@ -18,7 +18,7 @@ func NewLinkedListQueue() *LinkedListQueue {
 }
 
 func (queue *LinkedListQueue) EnQueue(value interface{}) {
-	node := &queueNode{value, nil}
+	node := &node{value, nil}
 	if nil == queue.tail {
 		queue.tail = node
 		queue.head = node

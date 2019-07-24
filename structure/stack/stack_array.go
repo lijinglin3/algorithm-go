@@ -8,6 +8,9 @@ type ArrayStack struct {
 }
 
 func NewArrayStack(capacity int) *ArrayStack {
+	if capacity <= 0 {
+		return nil
+	}
 	return &ArrayStack{
 		data: make([]interface{}, capacity, capacity),
 		top:  -1,

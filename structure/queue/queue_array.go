@@ -1,4 +1,4 @@
-package structure
+package queue
 
 import "fmt"
 
@@ -8,8 +8,8 @@ type ArrayQueue struct {
 	tail int
 }
 
-func NewArrayQueue(capacity uint) *ArrayQueue {
-	if capacity == 0 {
+func NewArrayQueue(capacity int) *ArrayQueue {
+	if capacity <= 0 {
 		return nil
 	} else {
 		return &ArrayQueue{
