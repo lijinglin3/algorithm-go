@@ -2,6 +2,12 @@ package stack
 
 import "testing"
 
+func TestNewArrayStack(t *testing.T) {
+	if NewArrayStack(-1) != nil {
+		t.Fatal("new arrary stack failed")
+	}
+}
+
 func TestArrayStackPush(t *testing.T) {
 	s := NewArrayStack(3)
 	if !s.Push(1) {

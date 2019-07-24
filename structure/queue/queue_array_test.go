@@ -60,4 +60,25 @@ func TestArrayQueue_DeQueue(t *testing.T) {
 	if q.DeQueue() != nil {
 		t.Fatal("de queue failed")
 	}
+
+	_ = q.EnQueue(0)
+	_ = q.EnQueue(1)
+
+	if q.DeQueue() != 0 {
+		t.Fatal("de queue failed")
+	}
+
+	_ = q.EnQueue(2)
+
+	if q.DeQueue() != 1 {
+		t.Fatal("de queue failed")
+	}
+
+	if q.DeQueue() != 2 {
+		t.Fatal("de queue failed")
+	}
+
+	if q.DeQueue() != nil {
+		t.Fatal("de queue failed")
+	}
 }

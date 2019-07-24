@@ -35,4 +35,8 @@ func TestListQueue_DeQueue(t *testing.T) {
 	if q.DeQueue() != 2 {
 		t.Fatal("de queue failed")
 	}
+
+	if q.DeQueue() != nil {
+		t.Fatal("de queue failed")
+	}
 }

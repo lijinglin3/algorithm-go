@@ -29,15 +29,13 @@ func (queue *ArrayQueue) IsEmpty() bool {
 }
 
 func (queue *ArrayQueue) IsFull() bool {
-	return queue.tail == cap(queue.data)
+	return (queue.tail - queue.head) == cap(queue.data)
 }
 
 func (queue *ArrayQueue) EnQueue(value interface{}) bool {
 	if queue.IsFull() {
 		return false
 	}
-	queue.data[queue.tail] = value
-	queue.tail++
 	if queue.head != 0 {
 		length := queue.Length()
 		for i := 0; i < length; i++ {
@@ -45,6 +43,8 @@ func (queue *ArrayQueue) EnQueue(value interface{}) bool {
 		}
 		queue.head, queue.tail = 0, length
 	}
+	queue.data[queue.tail] = value
+	queue.tail++
 	return true
 }
 
