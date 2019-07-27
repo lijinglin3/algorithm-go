@@ -50,14 +50,14 @@ func BucketSortSimple(source []int) {
 	}
 	array := make([]int, getMax(source)+1)
 	for i := 0; i < len(source); i++ {
-		array[source[i]] ++
+		array[source[i]]++
 	}
 	fmt.Println(array)
 	c := make([]int, 0)
 	for i := 0; i < len(array); i++ {
 		for array[i] != 0 {
 			c = append(c, i)
-			array[i] --
+			array[i]--
 		}
 	}
 	copy(source, c)
