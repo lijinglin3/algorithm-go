@@ -4,12 +4,14 @@ import (
 	"fmt"
 )
 
+//Node 二叉树的节点
 type Node struct {
 	data  interface{}
 	left  *Node
 	right *Node
 }
 
+//NewNode 初始化一个节点
 func NewNode(data interface{}) *Node {
 	return &Node{data: data}
 }
@@ -18,17 +20,21 @@ func (n *Node) String() string {
 	return fmt.Sprintf("v:%+v, left:%+v, right:%+v", n.data, n.left, n.right)
 }
 
+//BinaryTree 二叉树的结构体
 type BinaryTree struct {
 	root *Node
 }
 
+//NewBinaryTree 初始化一个二叉树
 func NewBinaryTree(rootV interface{}) *BinaryTree {
 	return &BinaryTree{root: NewNode(rootV)}
 }
 
+//InOrderTraverse 使用递归方法的中序遍历
 func (bt *BinaryTree) InOrderTraverse() (result []interface{}) {
 	if left := bt.root.left; nil != left {
-		result = append(result, left.data)
+		newBT := &BinaryTree{root: left}
+		result = append(result, newBT.InOrderTraverse()...)
 	}
 
 	result = append(result, bt.root.data)
@@ -41,70 +47,60 @@ func (bt *BinaryTree) InOrderTraverse() (result []interface{}) {
 	return
 }
 
+//PreOrderTraverse 使用递归方法的前序遍历
 func (bt *BinaryTree) PreOrderTraverse() (result []interface{}) {
-	//stack := make([]*Node, 0)
-	//stack = append(stack, bt.root)
-	//for len(stack) != 0 {
-	//	n := stack[len(stack)-1]
-	//	stack = stack[:len(stack)-1]
-	//	result = append(result, n.data)
-	//	if n.left != nil {
-	//		stack = append(stack, n.left)
-	//	}
-	//	if n.right != nil {
-	//		stack = append(stack, n.right)
-	//	}
-	//}
-	//return
-
 	result = append(result, bt.root.data)
 
 	if left := bt.root.left; nil != left {
 		newBT := &BinaryTree{root: left}
-		newBT.PreOrderTraverse()
+		result = append(result, newBT.PreOrderTraverse()...)
 	}
 
 	if right := bt.root.right; nil != right {
 		newBT := &BinaryTree{root: right}
-		newBT.PreOrderTraverse()
+		result = append(result, newBT.PreOrderTraverse()...)
 	}
 
 	return
 }
 
+//PostOrderTraverse 使用递归方法的后序遍历
 func (bt *BinaryTree) PostOrderTraverse() (result []interface{}) {
 	if left := bt.root.left; nil != left {
 		newBT := &BinaryTree{root: left}
-		newBT.PostOrderTraverse()
+		result = append(result, newBT.PostOrderTraverse()...)
 	}
 
 	if right := bt.root.right; nil != right {
 		newBT := &BinaryTree{root: right}
-		newBT.PostOrderTraverse()
+		result = append(result, newBT.PostOrderTraverse()...)
 	}
 
 	result = append(result, bt.root.data)
 	return
 }
 
+//InOrderTraverseByStack 使用stack的中序遍历
 func (bt *BinaryTree) InOrderTraverseByStack() (result []interface{}) {
 	stack := make([]*Node, 0)
 	n := bt.root
 
 	for len(stack) != 0 || nil != n {
 		if nil != n {
-			stack = append(stack)
+			stack = append(stack, n)
 			n = n.left
 		} else {
 			tmp := stack[len(stack)-1]
 			result = append(result, tmp.data)
 			n = tmp.right
+			stack = stack[:len(stack)-1]
 		}
 	}
 
 	return
 }
 
+//PreOrderTraverseByStack 使用stack的前序遍历
 func (bt *BinaryTree) PreOrderTraverseByStack() (result []interface{}) {
 	stack := make([]*Node, 0)
 	n := bt.root
@@ -115,11 +111,13 @@ func (bt *BinaryTree) PreOrderTraverseByStack() (result []interface{}) {
 			n = n.left
 		} else {
 			n = stack[len(stack)-1].right
+			stack = stack[:len(stack)-1]
 		}
 	}
 	return
 }
 
+//PostOrderTraverseByStack 使用stack的后序遍历
 func (bt *BinaryTree) PostOrderTraverseByStack() (result []interface{}) {
 	var pre *Node
 	n := bt.root
@@ -131,23 +129,25 @@ func (bt *BinaryTree) PostOrderTraverseByStack() (result []interface{}) {
 			result = append(result, n.data)
 			pre = n
 		} else {
-			if nil != n.left {
-				stack = append(stack, n.left)
-			}
 			if nil != n.right {
 				stack = append(stack, n.right)
+			}
+			if nil != n.left {
+				stack = append(stack, n.left)
 			}
 		}
 	}
 	return
 }
 
+//PostOrderTraverseByTwoStack 使用两个stack的后序遍历
 func (bt *BinaryTree) PostOrderTraverseByTwoStack() (result []interface{}) {
 	n := bt.root
 	stack1 := []*Node{n}
 	stack2 := make([]*Node, 0)
 	for len(stack1) != 0 {
 		n = stack1[len(stack1)-1]
+		stack1 = stack1[:len(stack1)-1]
 		stack2 = append(stack2, n)
 		if nil != n.left {
 			stack1 = append(stack1, n.left)
@@ -163,11 +163,13 @@ func (bt *BinaryTree) PostOrderTraverseByTwoStack() (result []interface{}) {
 	return
 }
 
+//BinarySearchTree 二叉搜索树
 type BinarySearchTree struct {
 	*BinaryTree
 	CompareFunc func(v, nodeV interface{}) int
 }
 
+//NewBinarySearchTree 初始化二叉搜索树
 func NewBinarySearchTree(rootV interface{}, compareFunc func(v, nodeV interface{}) int) *BinarySearchTree {
 	return &BinarySearchTree{
 		BinaryTree:  NewBinaryTree(rootV),
@@ -175,6 +177,7 @@ func NewBinarySearchTree(rootV interface{}, compareFunc func(v, nodeV interface{
 	}
 }
 
+//Insert 插入一个值到二叉搜索树中
 func (bst *BinarySearchTree) Insert(v interface{}) bool {
 	n := bst.root
 	for nil != n {
@@ -196,21 +199,23 @@ func (bst *BinarySearchTree) Insert(v interface{}) bool {
 			n = n.right
 		}
 	}
-	return true
+	return false
 }
 
+//Delete 删除二叉搜索树中的某个值
 func (bst *BinarySearchTree) Delete(v interface{}) bool {
 	// TODO
 	return false
 }
 
-func (bst *BinarySearchTree) Find(v interface{}) interface{} {
+//Find 查找二叉搜索树中的某个值
+func (bst *BinarySearchTree) Find(v interface{}) bool {
 	n := bst.root
 	for nil != n {
 		compareResult := bst.CompareFunc(v, n.data)
 		switch {
 		case compareResult == 0:
-			return n
+			return true
 		case compareResult < 0:
 			n = n.left
 		case compareResult > 0:
@@ -218,27 +223,29 @@ func (bst *BinarySearchTree) Find(v interface{}) interface{} {
 		}
 	}
 
-	return nil
+	return false
 }
 
+//Min 返回二叉搜索树中的最小值
 func (bst *BinarySearchTree) Min() interface{} {
 	n := bst.root
 	for nil != n {
 		if nil == n.left {
-			return n.data
+			break
 		}
 		n = n.left
 	}
-	return nil
+	return n.data
 }
 
+//Max 返回二叉搜索树中的最大值
 func (bst *BinarySearchTree) Max() interface{} {
 	n := bst.root
 	for nil != n {
 		if nil == n.right {
-			return n.data
+			break
 		}
 		n = n.right
 	}
-	return nil
+	return n.data
 }
