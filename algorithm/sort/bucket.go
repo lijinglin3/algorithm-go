@@ -1,9 +1,5 @@
 package sort
 
-import (
-	"fmt"
-)
-
 // 桶排序
 
 // 获取待排序数组中的最大值
@@ -52,7 +48,6 @@ func BucketSortSimple(source []int) {
 	for i := 0; i < len(source); i++ {
 		array[source[i]]++
 	}
-	fmt.Println(array)
 	c := make([]int, 0)
 	for i := 0; i < len(array); i++ {
 		for array[i] != 0 {

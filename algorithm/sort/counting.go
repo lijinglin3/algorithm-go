@@ -2,7 +2,8 @@ package sort
 
 import "math"
 
-func CountingSort(a []int, n int) {
+func CountingSort(a []int) {
+	n := len(a)
 	if n <= 1 {
 		return
 	}
