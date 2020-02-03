@@ -17,6 +17,17 @@ func TestReverseList(t *testing.T) {
 	return
 }
 
+func TestReverseListByRecursion(t *testing.T) {
+	if !assert.ElementsMatch(t, []int{}, toSlice(ReverseListByRecursion(toListNode([]int{})))) {
+		t.Fail()
+	}
+
+	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(ReverseListByRecursion(toListNode([]int{5, 4, 3, 2, 1})))) {
+		t.Fail()
+	}
+	return
+}
+
 func toSlice(node *ListNode) (values []int) {
 	for node != nil {
 		values = append(values, node.Val)
