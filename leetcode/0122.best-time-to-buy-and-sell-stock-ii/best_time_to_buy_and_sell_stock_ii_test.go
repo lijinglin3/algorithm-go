@@ -19,6 +19,6 @@ func TestMaxProfit(t *testing.T) {
 	results := []int{0, 0, 7, 4, 0}
 
 	for i, s := range cases {
-		assert.Equal(t, MaxProfit(s), results[i])
+		assert.Equal(t, results[i], MaxProfit(s))
 	}
 }

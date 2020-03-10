@@ -21,6 +21,6 @@ func TestPlusOne(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, PlusOne(cases[i]), results[i])
+		assert.Equal(t, results[i], PlusOne(cases[i]))
 	}
 }

@@ -48,6 +48,6 @@ func TestRotate(t *testing.T) {
 
 	for i := range cases {
 		Rotate(cases[i])
-		assert.Equal(t, cases[i], results[i])
+		assert.Equal(t, results[i], cases[i])
 	}
 }

@@ -23,6 +23,6 @@ func TestContainsDuplicate(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, ContainsDuplicate(cases[i]), results[i])
+		assert.Equal(t, results[i], ContainsDuplicate(cases[i]))
 	}
 }
