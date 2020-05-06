@@ -7,15 +7,19 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestDiameterOfBinaryTree(t *testing.T) {
+func TestPreorderTraversal(t *testing.T) {
 	cases := []*TreeNode{
 		TreeNodeExample1,
 		{},
 		nil,
 	}
-	results := []int{3, 0, 0}
+	results := [][]int{
+		{1, 2, 4, 5, 3},
+		{0},
+		nil,
+	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], DiameterOfBinaryTree(cases[i]))
+		assert.Equal(t, results[i], PreorderTraversal(cases[i]))
 	}
 }

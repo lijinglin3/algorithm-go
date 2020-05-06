@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode"
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
 var result int
 
