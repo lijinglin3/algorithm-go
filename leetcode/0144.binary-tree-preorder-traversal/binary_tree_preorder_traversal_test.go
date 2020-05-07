@@ -23,3 +23,20 @@ func TestPreorderTraversal(t *testing.T) {
 		assert.Equal(t, results[i], PreorderTraversal(cases[i]))
 	}
 }
+
+func TestPreorderTraversalByStack(t *testing.T) {
+	cases := []*TreeNode{
+		TreeNodeExample1,
+		{},
+		nil,
+	}
+	results := [][]int{
+		{1, 2, 4, 5, 3},
+		{0},
+		nil,
+	}
+
+	for i := range cases {
+		assert.Equal(t, results[i], PreorderTraversalByStack(cases[i]))
+	}
+}
