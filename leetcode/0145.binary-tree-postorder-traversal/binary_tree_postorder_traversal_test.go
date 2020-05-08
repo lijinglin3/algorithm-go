@@ -24,3 +24,20 @@ func TestPostorderTraversal(t *testing.T) {
 		assert.Equal(t, results[i], PostorderTraversal(cases[i]))
 	}
 }
+
+func TestPostorderTraversalByStack(t *testing.T) {
+	cases := []*TreeNode{
+		TreeNodeExample1,
+		{},
+		nil,
+	}
+	results := [][]int{
+		{4, 5, 2, 3, 1},
+		{0},
+		nil,
+	}
+
+	for i := range cases {
+		assert.Equal(t, results[i], PostorderTraversalByStack(cases[i]))
+	}
+}
