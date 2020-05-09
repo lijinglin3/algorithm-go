@@ -1,10 +1,6 @@
 package leetcode
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
 func IsSymmetric(root *TreeNode) bool {
 	queue := []*TreeNode{root, root}
