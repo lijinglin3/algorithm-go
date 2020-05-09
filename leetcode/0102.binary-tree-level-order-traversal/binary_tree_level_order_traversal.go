@@ -1,14 +1,10 @@
 package leetcode
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
 func LevelOrder(root *TreeNode) [][]int {
 	if root == nil {
-		return [][]int{}
+		return nil
 	}
 
 	result := make([][]int, 0)
