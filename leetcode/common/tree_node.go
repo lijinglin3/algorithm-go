@@ -80,4 +80,18 @@ var (
 			},
 		},
 	}
+
+	TreeNodeExample4 = &TreeNode{
+		Val:  1,
+		Left: nil,
+		Right: &TreeNode{
+			Val:  2,
+			Left: nil,
+			Right: &TreeNode{
+				Val:   3,
+				Left:  nil,
+				Right: nil,
+			},
+		},
+	}
 )
