@@ -10,9 +10,9 @@ import (
 
 func TestIsSymmetric(t *testing.T) {
 	cases := []*TreeNode{
-		TreeNodeExample1,
-		TreeNodeExample2,
-		TreeNodeExample3,
+		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		TreeNodeDecoder("[1, 2, 2, 3, null, 4]"),
+		TreeNodeDecoder("[1, 2, 2, 3, 4, 4, 3]"),
 		{},
 		nil,
 	}

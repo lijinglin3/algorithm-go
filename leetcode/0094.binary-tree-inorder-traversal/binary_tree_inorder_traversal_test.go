@@ -10,7 +10,7 @@ import (
 
 func TestInorderTraversal(t *testing.T) {
 	cases := []*TreeNode{
-		TreeNodeExample1,
+		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}
@@ -27,7 +27,7 @@ func TestInorderTraversal(t *testing.T) {
 
 func TestInorderTraversalByStack(t *testing.T) {
 	cases := []*TreeNode{
-		TreeNodeExample1,
+		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

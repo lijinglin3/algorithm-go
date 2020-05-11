@@ -10,8 +10,8 @@ import (
 
 func TestHasPathSum(t *testing.T) {
 	cases := []*TreeNode{
-		TreeNodeExample1,
-		TreeNodeExample1,
+		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

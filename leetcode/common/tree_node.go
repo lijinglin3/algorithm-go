@@ -1,97 +1,58 @@
 package common
 
+import "encoding/json"
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
 
-var (
-	TreeNodeExample1 = &TreeNode{
-		Val: 1,
-		Left: &TreeNode{
-			Val: 2,
-			Left: &TreeNode{
-				Val:   4,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: &TreeNode{
-				Val:   5,
-				Left:  nil,
-				Right: nil,
-			},
-		},
-		Right: &TreeNode{
-			Val:   3,
-			Left:  nil,
-			Right: nil,
-		},
+func NewTreeNode(data interface{}) *TreeNode {
+	switch t := data.(type) {
+	case float64:
+		return &TreeNode{Val: int(t)}
+	default:
+		return nil
+	}
+}
+
+func TreeNodeDecoder(str string) *TreeNode {
+	list := make([]interface{}, 0)
+	if err := json.Unmarshal([]byte(str), &list); err != nil {
+		panic(err)
 	}
 
-	TreeNodeExample2 = &TreeNode{
-		Val: 1,
-		Left: &TreeNode{
-			Val: 2,
-			Left: &TreeNode{
-				Val:   3,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: nil,
-		},
-		Right: &TreeNode{
-			Val: 2,
-			Left: &TreeNode{
-				Val:   4,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: nil,
-		},
+	if len(list) == 0 {
+		return nil
 	}
 
-	TreeNodeExample3 = &TreeNode{
-		Val: 1,
-		Left: &TreeNode{
-			Val: 2,
-			Left: &TreeNode{
-				Val:   3,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: &TreeNode{
-				Val:   4,
-				Left:  nil,
-				Right: nil,
-			},
-		},
-		Right: &TreeNode{
-			Val: 2,
-			Left: &TreeNode{
-				Val:   4,
-				Left:  nil,
-				Right: nil,
-			},
-			Right: &TreeNode{
-				Val:   3,
-				Left:  nil,
-				Right: nil,
-			},
-		},
+	root := NewTreeNode(list[0])
+	queue := []*TreeNode{root}
+	index, length := 1, len(list)
+	for len(queue) != 0 {
+		newQueue := make([]*TreeNode, 0)
+		for _, n := range queue {
+			if index < length {
+				left := NewTreeNode(list[index])
+				if left != nil {
+					n.Left = left
+					newQueue = append(newQueue, left)
+				}
+			}
+			index++
+
+			if index < length {
+				right := NewTreeNode(list[index])
+				if right != nil {
+					n.Right = right
+					newQueue = append(newQueue, right)
+				}
+			}
+			index++
+		}
+		queue = newQueue
 	}
 
-	TreeNodeExample4 = &TreeNode{
-		Val:  1,
-		Left: nil,
-		Right: &TreeNode{
-			Val:  2,
-			Left: nil,
-			Right: &TreeNode{
-				Val:   3,
-				Left:  nil,
-				Right: nil,
-			},
-		},
-	}
-)
+	return root
+}
