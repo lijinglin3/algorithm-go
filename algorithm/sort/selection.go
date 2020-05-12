@@ -1,6 +1,6 @@
 package sort
 
-// 选择排序，a表示数组
+// SelectionSort 选择排序，a表示数组
 func SelectionSort(a []int) {
 	length := len(a)
 	if length <= 1 {

@@ -7,7 +7,7 @@ func Intersection(nums1 []int, nums2 []int) []int {
 		if _, exist := m[n]; !exist {
 			m[n] = 1
 		} else {
-			m[n] += 1
+			m[n]++
 		}
 	}
 
@@ -15,7 +15,7 @@ func Intersection(nums1 []int, nums2 []int) []int {
 		if v, exist := m[n]; exist {
 			if v != 0 {
 				result = append(result, n)
-				m[n] -= 1
+				m[n]--
 			}
 		}
 	}

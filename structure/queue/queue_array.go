@@ -11,12 +11,11 @@ type ArrayQueue struct {
 func NewArrayQueue(capacity int) *ArrayQueue {
 	if capacity <= 0 {
 		return nil
-	} else {
-		return &ArrayQueue{
-			data: make([]interface{}, capacity, capacity),
-			head: 0,
-			tail: 0,
-		}
+	}
+	return &ArrayQueue{
+		data: make([]interface{}, capacity, capacity),
+		head: 0,
+		tail: 0,
 	}
 }
 
@@ -60,11 +59,10 @@ func (queue *ArrayQueue) DeQueue() interface{} {
 func (queue *ArrayQueue) String() string {
 	if queue.IsEmpty() {
 		return "empty queue"
-	} else {
-		str := "head"
-		for _, v := range queue.data[queue.head:queue.tail] {
-			str += fmt.Sprintf(" --> %+v", v)
-		}
-		return str + " --> tail"
 	}
+	str := "head"
+	for _, v := range queue.data[queue.head:queue.tail] {
+		str += fmt.Sprintf(" --> %+v", v)
+	}
+	return str + " --> tail"
 }

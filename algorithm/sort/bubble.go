@@ -1,6 +1,6 @@
 package sort
 
-//冒泡排序，a是数组，n表示数组大小
+// BubbleSort 冒泡排序，a是数组，n表示数组大小
 func BubbleSort(a []int) {
 	n := len(a)
 	if n <= 1 {

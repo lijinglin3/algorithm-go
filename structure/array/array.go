@@ -74,7 +74,7 @@ func (a *Array) Delete(index int) bool {
 func (a *Array) String() string {
 	if a.length == 0 {
 		return fmt.Sprint([]int{})
-	} else {
-		return fmt.Sprint(a.data[0:a.length])
 	}
+	return fmt.Sprint(a.data[0:a.length])
+
 }

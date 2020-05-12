@@ -25,24 +25,24 @@ func Constructor(root *TreeNode) BSTIterator {
 	}
 }
 
-/** @return the next smallest number */
-func (this *BSTIterator) Next() int {
-	n := this.stack[this.length-1]
-	this.stack = this.stack[:this.length-1]
+// Next return the next smallest number
+func (iterator *BSTIterator) Next() int {
+	n := iterator.stack[iterator.length-1]
+	iterator.stack = iterator.stack[:iterator.length-1]
 
 	tmp := n.Right
 	for tmp != nil {
-		this.stack = append(this.stack, tmp)
+		iterator.stack = append(iterator.stack, tmp)
 		tmp = tmp.Left
 	}
-	this.length = len(this.stack)
+	iterator.length = len(iterator.stack)
 
 	return n.Val
 }
 
-/** @return whether we have a next smallest number */
-func (this *BSTIterator) HasNext() bool {
-	if this.length != 0 {
+// HasNext return whether we have a next smallest number
+func (iterator *BSTIterator) HasNext() bool {
+	if iterator.length != 0 {
 		return true
 	}
 	return false

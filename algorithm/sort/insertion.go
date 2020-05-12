@@ -1,6 +1,6 @@
 package sort
 
-// 插入排序，a表示数组，n表示数组大小
+// InsertionSort 插入排序，a表示数组，n表示数组大小
 func InsertionSort(a []int, n int) {
 	if n <= 1 {
 		return

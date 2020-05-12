@@ -56,7 +56,7 @@ func (stack *ArrayStack) Flush() {
 func (stack *ArrayStack) String() string {
 	if stack.IsEmpty() {
 		return fmt.Sprintln([]interface{}{})
-	} else {
-		return fmt.Sprintln(stack.data[0 : stack.top+1])
 	}
+	return fmt.Sprintln(stack.data[0 : stack.top+1])
+
 }

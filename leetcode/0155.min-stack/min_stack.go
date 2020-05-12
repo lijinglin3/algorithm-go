@@ -5,50 +5,50 @@ type MinStack struct {
 	length      int
 }
 
-/** initialize your data structure here. */
+// Constructor initialize your data structure here.
 func Constructor() MinStack {
 	return MinStack{stack: make([]int, 0), sort: make([]int, 0), length: 0}
 }
 
-func (this *MinStack) Push(x int) {
-	this.length = this.length + 1
-	this.stack = append(this.stack, x)
-	this.sort = append(this.sort, x)
-	for i := this.length - 2; i >= 0; i-- {
-		if this.sort[i+1] > this.sort[i] {
-			this.sort[i+1] = this.sort[i]
-			this.sort[i] = x
+func (stack *MinStack) Push(x int) {
+	stack.length = stack.length + 1
+	stack.stack = append(stack.stack, x)
+	stack.sort = append(stack.sort, x)
+	for i := stack.length - 2; i >= 0; i-- {
+		if stack.sort[i+1] > stack.sort[i] {
+			stack.sort[i+1] = stack.sort[i]
+			stack.sort[i] = x
 		} else {
 			break
 		}
 	}
 }
 
-func (this *MinStack) Pop() {
-	if this.length == 0 {
+func (stack *MinStack) Pop() {
+	if stack.length == 0 {
 		return
 	}
-	val := this.stack[this.length-1]
-	for i, v := range this.sort {
+	val := stack.stack[stack.length-1]
+	for i, v := range stack.sort {
 		if v == val {
-			this.sort = append(this.sort[:i], this.sort[i+1:]...)
+			stack.sort = append(stack.sort[:i], stack.sort[i+1:]...)
 			break
 		}
 	}
-	this.stack = this.stack[:this.length-1]
-	this.length = this.length - 1
+	stack.stack = stack.stack[:stack.length-1]
+	stack.length = stack.length - 1
 }
 
-func (this *MinStack) Top() int {
-	if this.length == 0 {
+func (stack *MinStack) Top() int {
+	if stack.length == 0 {
 		return 0
 	}
-	return this.stack[this.length-1]
+	return stack.stack[stack.length-1]
 }
 
-func (this *MinStack) GetMin() int {
-	if this.length == 0 {
+func (stack *MinStack) GetMin() int {
+	if stack.length == 0 {
 		return 0
 	}
-	return this.sort[this.length-1]
+	return stack.sort[stack.length-1]
 }

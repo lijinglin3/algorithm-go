@@ -20,21 +20,19 @@ func IsValidSudoku(board [][]byte) bool {
 			t := i/3*3 + j/3
 			if _, exist := boxes[t][board[i][j]]; exist {
 				return false
-			} else {
-				boxes[t][board[i][j]] = struct{}{}
 			}
+			boxes[t][board[i][j]] = struct{}{}
 
 			if _, exist := rows[i][board[i][j]]; exist {
 				return false
-			} else {
-				rows[i][board[i][j]] = struct{}{}
 			}
+			rows[i][board[i][j]] = struct{}{}
 
 			if _, exist := columns[j][board[i][j]]; exist {
 				return false
-			} else {
-				columns[j][board[i][j]] = struct{}{}
 			}
+			columns[j][board[i][j]] = struct{}{}
+
 		}
 	}
 

@@ -10,15 +10,15 @@ func Constructor(nums []int) Solution {
 	return Solution{nums}
 }
 
-/** Resets the array to its original configuration and return it. */
-func (this *Solution) Reset() []int {
-	return this.nums
+// Reset resets the array to its original configuration and return it.
+func (s *Solution) Reset() []int {
+	return s.nums
 }
 
-/** Returns a random shuffling of the array. */
-func (this *Solution) Shuffle() []int {
-	nums := make([]int, len(this.nums))
-	copy(nums, this.nums)
+// Shuffle returns a random shuffling of the array.
+func (s *Solution) Shuffle() []int {
+	nums := make([]int, len(s.nums))
+	copy(nums, s.nums)
 	rand.Shuffle(len(nums), func(i int, j int) {
 		nums[i], nums[j] = nums[j], nums[i]
 	})

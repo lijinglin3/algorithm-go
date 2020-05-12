@@ -5,10 +5,10 @@ import "reflect"
 func IsAnagram(s string, t string) bool {
 	m, n := make(map[rune]int), make(map[rune]int)
 	for _, i := range s {
-		m[i] += 1
+		m[i]++
 	}
 	for _, i := range t {
-		n[i] += 1
+		n[i]++
 	}
 	return reflect.DeepEqual(m, n)
 }

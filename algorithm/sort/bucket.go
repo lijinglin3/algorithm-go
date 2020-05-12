@@ -39,7 +39,7 @@ func BucketSort(a []int) {
 
 }
 
-// 桶排序简单实现
+// BucketSortSimple 桶排序简单实现
 func BucketSortSimple(source []int) {
 	if len(source) <= 1 {
 		return

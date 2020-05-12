@@ -1,1 +1,1 @@
-package hash_table
+package hashtable

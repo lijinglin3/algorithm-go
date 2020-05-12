@@ -49,11 +49,11 @@ func (stack *LinkedListStack) Flush() {
 func (stack *LinkedListStack) String() string {
 	if stack.IsEmpty() {
 		return "empty stack"
-	} else {
-		str := "top"
-		for cur := stack.top; cur != nil; cur = cur.next {
-			str += fmt.Sprintf(" --> %+v", cur.value)
-		}
-		return str + " --> tail"
 	}
+	str := "top"
+	for cur := stack.top; cur != nil; cur = cur.next {
+		str += fmt.Sprintf(" --> %+v", cur.value)
+	}
+	return str + " --> tail"
+
 }

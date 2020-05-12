@@ -42,12 +42,11 @@ func (queue *LinkedListQueue) DeQueue() interface{} {
 func (queue *LinkedListQueue) String() string {
 	if queue.head == nil {
 		return "empty queue"
-	} else {
-		result := "head"
-		for cur := queue.head; cur != nil; cur = cur.next {
-			result += fmt.Sprintf(" --> %+v", cur.val)
-		}
-		result += "--> tail"
-		return result
 	}
+	result := "head"
+	for cur := queue.head; cur != nil; cur = cur.next {
+		result += fmt.Sprintf(" --> %+v", cur.val)
+	}
+	result += "--> tail"
+	return result
 }

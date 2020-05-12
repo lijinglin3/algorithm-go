@@ -1,4 +1,4 @@
-package linked_list
+package linkedlist
 
 import (
 	"fmt"
@@ -69,9 +69,9 @@ func (list *LinkedList) Find(index int) interface{} {
 	node := list.findNode(index)
 	if nil == node {
 		return nil
-	} else {
-		return node.value
 	}
+	return node.value
+
 }
 
 func (list *LinkedList) Delete(index int) bool {

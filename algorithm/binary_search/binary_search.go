@@ -1,7 +1,7 @@
-package binary_search
+package binarysearch
 
-// BinarySearch 二分查找
-func BinarySearch(nums []int, v int) int {
+// Search 二分查找
+func Search(nums []int, v int) int {
 	length := len(nums)
 	if length == 0 {
 		return -1
@@ -23,8 +23,8 @@ func BinarySearch(nums []int, v int) int {
 	return -1
 }
 
-// BinarySearchRecursive 使用递归方式的二分查找
-func BinarySearchRecursive(nums []int, v int) int {
+// SearchRecursive 使用递归方式的二分查找
+func SearchRecursive(nums []int, v int) int {
 	length := len(nums)
 	if length == 0 {
 		return -1
@@ -50,8 +50,8 @@ func bs(nums []int, v int, low, high int) int {
 	}
 }
 
-// BinarySearchFirst 查找第一个等于给定值的元素
-func BinarySearchFirst(nums []int, v int) int {
+// SearchFirst 查找第一个等于给定值的元素
+func SearchFirst(nums []int, v int) int {
 	length := len(nums)
 	if length == 0 {
 		return -1
@@ -75,8 +75,8 @@ func BinarySearchFirst(nums []int, v int) int {
 	return -1
 }
 
-// BinarySearchLast 查找最后一个值等于给定值的元素
-func BinarySearchLast(nums []int, v int) int {
+// SearchLast 查找最后一个值等于给定值的元素
+func SearchLast(nums []int, v int) int {
 	length := len(nums)
 	if length == 0 {
 		return -1
