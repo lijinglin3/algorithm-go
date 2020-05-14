@@ -1,6 +1,6 @@
 package leetcode
 
-func IsValidSudoku(board [][]byte) bool {
+func isValidSudoku(board [][]byte) bool {
 	rows := make([]map[byte]interface{}, 9)
 	columns := make([]map[byte]interface{}, 9)
 	boxes := make([]map[byte]interface{}, 9)

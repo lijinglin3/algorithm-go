@@ -4,7 +4,7 @@ import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
 var result int
 
-func DiameterOfBinaryTree(root *TreeNode) int {
+func diameterOfBinaryTree(root *TreeNode) int {
 	result = 0
 	depth(root)
 	return result

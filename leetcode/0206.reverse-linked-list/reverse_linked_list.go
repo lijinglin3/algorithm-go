@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func ReverseList(head *ListNode) *ListNode {
+func reverseList(head *ListNode) *ListNode {
 	var ln *ListNode
 	for head != nil {
 		cur := head
@@ -17,12 +14,12 @@ func ReverseList(head *ListNode) *ListNode {
 	return ln
 }
 
-func ReverseListByRecursion(head *ListNode) *ListNode {
+func reverseListByRecursion(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
 
-	ln := ReverseListByRecursion(head.Next)
+	ln := reverseListByRecursion(head.Next)
 	head.Next.Next = head
 	head.Next = nil
 

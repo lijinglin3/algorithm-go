@@ -1,6 +1,6 @@
 package leetcode
 
-func DominantIndex(nums []int) int {
+func dominantIndex(nums []int) int {
 	//max, index := nums[0], 0
 	//for i, j := range nums {
 	//	if max < j {

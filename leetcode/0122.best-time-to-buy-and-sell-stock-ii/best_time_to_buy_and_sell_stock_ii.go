@@ -1,6 +1,6 @@
 package leetcode
 
-func MaxProfit(prices []int) int {
+func maxProfit(prices []int) int {
 	l := len(prices)
 	if l <= 1 {
 		return 0

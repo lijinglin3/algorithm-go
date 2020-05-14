@@ -1,5 +1,6 @@
 package leetcode
 
+// MyLinkedList my linked list
 type MyLinkedList struct {
 	val  int
 	next *MyLinkedList

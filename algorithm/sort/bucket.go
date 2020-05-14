@@ -13,6 +13,7 @@ func getMax(a []int) int {
 	return max
 }
 
+// BucketSort 桶排序
 func BucketSort(a []int) {
 	num := len(a)
 	if num <= 1 {

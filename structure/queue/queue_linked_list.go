@@ -7,16 +7,19 @@ type node struct {
 	next *node
 }
 
+// LinkedListQueue 基于链表实现的队列
 type LinkedListQueue struct {
 	head   *node
 	tail   *node
 	length int
 }
 
+// NewLinkedListQueue 初始化队列
 func NewLinkedListQueue() *LinkedListQueue {
 	return &LinkedListQueue{nil, nil, 0}
 }
 
+// EnQueue 入队列
 func (queue *LinkedListQueue) EnQueue(value interface{}) {
 	node := &node{value, nil}
 	if nil == queue.tail {
@@ -29,6 +32,7 @@ func (queue *LinkedListQueue) EnQueue(value interface{}) {
 	queue.length++
 }
 
+// DeQueue 出队列
 func (queue *LinkedListQueue) DeQueue() interface{} {
 	if queue.head == nil {
 		return nil

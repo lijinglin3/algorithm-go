@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	p1, p2 := head, head
 	for i := 0; i < n; i++ {
 		p2 = p2.Next

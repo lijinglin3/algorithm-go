@@ -1,6 +1,6 @@
 package leetcode
 
-func CanThreePartsEqualSum(A []int) bool {
+func canThreePartsEqualSum(A []int) bool {
 	sum := 0
 	for _, v := range A {
 		sum += v

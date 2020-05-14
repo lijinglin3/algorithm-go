@@ -2,7 +2,7 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func IsSymmetric(root *TreeNode) bool {
+func isSymmetric(root *TreeNode) bool {
 	queue := []*TreeNode{root, root}
 	for len(queue) > 0 {
 		n1 := queue[len(queue)-1]
@@ -23,7 +23,7 @@ func IsSymmetric(root *TreeNode) bool {
 	return true
 }
 
-func IsSymmetricByRecursive(root *TreeNode) bool {
+func isSymmetricByRecursive(root *TreeNode) bool {
 	return isMirror(root, root)
 }
 

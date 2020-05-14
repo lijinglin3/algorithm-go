@@ -1,6 +1,6 @@
 package leetcode
 
-func LengthOfLastWord(s string) int {
+func lengthOfLastWord(s string) int {
 	length := len(s)
 	result := 0
 	index := length - 1

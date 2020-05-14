@@ -4,7 +4,7 @@ import "testing"
 
 func TestNewArrayStack(t *testing.T) {
 	if NewArrayStack(-1) != nil {
-		t.Fatal("new arrary stack failed")
+		t.Fatal("new array stack failed")
 	}
 }
 

@@ -1,6 +1,6 @@
 package leetcode
 
-func HammingDistance(x int, y int) int {
+func hammingDistance(x int, y int) int {
 	rx, ry := make([]int, 0), make([]int, 0)
 	for x != 0 {
 		rx = append(rx, x%2)

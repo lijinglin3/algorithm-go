@@ -2,6 +2,7 @@ package sort
 
 import "math"
 
+// CountingSort 计数排序
 func CountingSort(a []int) {
 	n := len(a)
 	if n <= 1 {

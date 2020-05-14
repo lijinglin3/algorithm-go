@@ -2,20 +2,20 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func PreorderTraversal(root *TreeNode) []int {
+func preorderTraversal(root *TreeNode) []int {
 	var result []int
 	if root == nil {
 		return nil
 	}
 
 	result = append(result, root.Val)
-	result = append(result, PreorderTraversal(root.Left)...)
-	result = append(result, PreorderTraversal(root.Right)...)
+	result = append(result, preorderTraversal(root.Left)...)
+	result = append(result, preorderTraversal(root.Right)...)
 
 	return result
 }
 
-func PreorderTraversalByStack(root *TreeNode) []int {
+func preorderTraversalByStack(root *TreeNode) []int {
 	var result []int
 	stack := make([]*TreeNode, 0)
 	n := root

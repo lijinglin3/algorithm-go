@@ -1,5 +1,6 @@
 package leetcode
 
+// MinStack MinStack
 type MinStack struct {
 	stack, sort []int
 	length      int
@@ -10,6 +11,7 @@ func Constructor() MinStack {
 	return MinStack{stack: make([]int, 0), sort: make([]int, 0), length: 0}
 }
 
+// Push 入栈
 func (stack *MinStack) Push(x int) {
 	stack.length = stack.length + 1
 	stack.stack = append(stack.stack, x)
@@ -24,6 +26,7 @@ func (stack *MinStack) Push(x int) {
 	}
 }
 
+// Pop 出栈
 func (stack *MinStack) Pop() {
 	if stack.length == 0 {
 		return
@@ -39,6 +42,7 @@ func (stack *MinStack) Pop() {
 	stack.length = stack.length - 1
 }
 
+// Top 查询栈顶元素
 func (stack *MinStack) Top() int {
 	if stack.length == 0 {
 		return 0
@@ -46,6 +50,7 @@ func (stack *MinStack) Top() int {
 	return stack.stack[stack.length-1]
 }
 
+// GetMin 返回栈中的最小值
 func (stack *MinStack) GetMin() int {
 	if stack.length == 0 {
 		return 0

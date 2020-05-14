@@ -1,10 +1,8 @@
 package leetcode
 
-import (
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
-)
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func MinDepth(root *TreeNode) int {
+func minDepth(root *TreeNode) int {
 	if nil == root {
 		return 0
 	}

@@ -1,5 +1,6 @@
 package sort
 
+// MergeSort 归并排序
 func MergeSort(arr []int) {
 	arrLen := len(arr)
 	if arrLen <= 1 {

@@ -2,6 +2,7 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
+// Postorder 递归方式实现的后序遍历
 func Postorder(root *Node) []int {
 	if root == nil {
 		return nil
@@ -15,6 +16,7 @@ func Postorder(root *Node) []int {
 	return append(results, root.Val)
 }
 
+// PostorderByStack 迭代方式实现的后序遍历
 func PostorderByStack(root *Node) []int {
 	if root == nil {
 		return nil

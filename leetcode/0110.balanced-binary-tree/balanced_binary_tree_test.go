@@ -25,6 +25,6 @@ func TestIsBalanced(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], IsBalanced(cases[i]))
+		assert.Equal(t, results[i], isBalanced(cases[i]))
 	}
 }

@@ -1,12 +1,8 @@
 package leetcode
 
-// ListNode definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func DetectCycle(head *ListNode) *ListNode {
+func detectCycle(head *ListNode) *ListNode {
 	p1, p2 := head, head
 
 	for {

@@ -3,5 +3,5 @@ package leetcode
 import "testing"
 
 func TestMyAtoi(t *testing.T) {
-	MyAtoi("    -43   22")
+	myAtoi("    -43   22")
 }

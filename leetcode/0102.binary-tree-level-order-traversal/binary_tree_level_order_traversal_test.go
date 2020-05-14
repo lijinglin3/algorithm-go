@@ -21,6 +21,6 @@ func TestLevelOrder(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], LevelOrder(cases[i]))
+		assert.Equal(t, results[i], levelOrder(cases[i]))
 	}
 }

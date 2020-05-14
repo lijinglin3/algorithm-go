@@ -2,7 +2,7 @@ package leetcode
 
 import "strconv"
 
-func CountAndSay(n int) string {
+func countAndSay(n int) string {
 	result := "1"
 	for n > 1 {
 		tag := result[0]

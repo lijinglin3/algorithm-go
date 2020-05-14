@@ -25,7 +25,7 @@ func TestIsSymmetric(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], IsSymmetric(cases[i]))
-		assert.Equal(t, results[i], IsSymmetricByRecursive(cases[i]))
+		assert.Equal(t, results[i], isSymmetric(cases[i]))
+		assert.Equal(t, results[i], isSymmetricByRecursive(cases[i]))
 	}
 }

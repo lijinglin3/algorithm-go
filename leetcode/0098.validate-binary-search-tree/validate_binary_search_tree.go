@@ -1,14 +1,12 @@
 package leetcode
 
-import "math"
+import (
+	"math"
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+)
 
-func IsValidBST(root *TreeNode) bool {
+func isValidBST(root *TreeNode) bool {
 	min := math.MinInt64
 	stack := make([]*TreeNode, 0)
 	for len(stack) > 0 || root != nil {

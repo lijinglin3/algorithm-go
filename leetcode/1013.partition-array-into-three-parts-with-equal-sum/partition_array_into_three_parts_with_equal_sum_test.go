@@ -19,6 +19,6 @@ func TestCanThreePartsEqualSum(t *testing.T) {
 	results := []bool{false, true, false, true, true, false, true}
 
 	for i := range cases {
-		assert.Equal(t, results[i], CanThreePartsEqualSum(cases[i]))
+		assert.Equal(t, results[i], canThreePartsEqualSum(cases[i]))
 	}
 }

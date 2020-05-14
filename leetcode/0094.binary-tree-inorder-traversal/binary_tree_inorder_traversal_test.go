@@ -21,7 +21,7 @@ func TestInorderTraversal(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], InorderTraversal(cases[i]))
+		assert.Equal(t, results[i], inorderTraversal(cases[i]))
 	}
 }
 
@@ -38,6 +38,6 @@ func TestInorderTraversalByStack(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], InorderTraversalByStack(cases[i]))
+		assert.Equal(t, results[i], inorderTraversalByStack(cases[i]))
 	}
 }

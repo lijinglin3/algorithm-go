@@ -2,12 +2,14 @@ package queue
 
 import "fmt"
 
+// CircularQueue 循环队列
 type CircularQueue struct {
 	data []interface{}
 	head int
 	tail int
 }
 
+// NewCircularQueue 初始化循环队列
 func NewCircularQueue(capacity int) *CircularQueue {
 	if capacity == 0 {
 		return nil
@@ -15,6 +17,7 @@ func NewCircularQueue(capacity int) *CircularQueue {
 	return &CircularQueue{make([]interface{}, capacity, capacity), 0, 0}
 }
 
+// IsEmpty 判断队列是否为空
 func (queue *CircularQueue) IsEmpty() bool {
 	if queue.head == queue.tail {
 		return true
@@ -22,6 +25,7 @@ func (queue *CircularQueue) IsEmpty() bool {
 	return false
 }
 
+// IsFull 判断队列是否已满
 func (queue *CircularQueue) IsFull() bool {
 	if queue.head == (queue.tail+1)%cap(queue.data) {
 		return true
@@ -29,6 +33,7 @@ func (queue *CircularQueue) IsFull() bool {
 	return false
 }
 
+// EnQueue 入队列
 func (queue *CircularQueue) EnQueue(v interface{}) bool {
 	if queue.IsFull() {
 		return false
@@ -38,6 +43,7 @@ func (queue *CircularQueue) EnQueue(v interface{}) bool {
 	return true
 }
 
+// DeQueue 出队列
 func (queue *CircularQueue) DeQueue() interface{} {
 	if queue.IsEmpty() {
 		return nil

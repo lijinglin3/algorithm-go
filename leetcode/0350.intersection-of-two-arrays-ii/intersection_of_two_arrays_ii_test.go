@@ -21,6 +21,6 @@ func TestIntersection(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.ElementsMatch(t, results[i], Intersection(cases[i][0], cases[i][1]))
+		assert.ElementsMatch(t, results[i], intersection(cases[i][0], cases[i][1]))
 	}
 }

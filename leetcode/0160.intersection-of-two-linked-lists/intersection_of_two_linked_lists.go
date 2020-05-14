@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func GetIntersectionNode(headA, headB *ListNode) *ListNode {
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	len1, len2 := 0, 0
 	p1, p2 := headA, headB
 	for p1 != nil {

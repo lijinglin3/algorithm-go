@@ -4,7 +4,7 @@ import (
 	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
 )
 
-func IsBalanced(root *TreeNode) bool {
+func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}

@@ -16,6 +16,6 @@ func TestDiameterOfBinaryTree(t *testing.T) {
 	results := []int{3, 0, 0}
 
 	for i := range cases {
-		assert.Equal(t, results[i], DiameterOfBinaryTree(cases[i]))
+		assert.Equal(t, results[i], diameterOfBinaryTree(cases[i]))
 	}
 }

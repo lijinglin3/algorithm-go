@@ -7,6 +7,8 @@ import (
 )
 
 func TestListToTreeNode(t *testing.T) {
+	assert.Panics(t, func() { TreeNodeDecoder("") })
+
 	cases := []string{
 		"[]",
 		"[1, 2, 3, 4, 5]",

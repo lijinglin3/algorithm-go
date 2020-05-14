@@ -1,6 +1,6 @@
 package leetcode
 
-func CountPrimes(n int) int {
+func countPrimes(n int) int {
 	notPrim := make([]bool, n)
 	for i := 2; i*i < n; i++ {
 		if !notPrim[i] {

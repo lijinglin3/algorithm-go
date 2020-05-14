@@ -2,6 +2,7 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
+// Preorder 递归方式实现的前序遍历
 func Preorder(root *Node) []int {
 	if root == nil {
 		return nil
@@ -16,6 +17,7 @@ func Preorder(root *Node) []int {
 	return results
 }
 
+// PreorderByStack 迭代方式实现的前序遍历
 func PreorderByStack(root *Node) []int {
 	if root == nil {
 		return nil

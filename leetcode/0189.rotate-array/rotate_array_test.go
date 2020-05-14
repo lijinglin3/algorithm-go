@@ -20,7 +20,7 @@ func TestRotate(t *testing.T) {
 	}
 
 	for i := range cases {
-		Rotate(cases[i], steps[i])
+		rotate(cases[i], steps[i])
 		assert.Equal(t, results[i], cases[i])
 	}
 }

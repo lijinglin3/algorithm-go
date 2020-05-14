@@ -56,6 +56,6 @@ func TestIsValidSudoku(t *testing.T) {
 	results := []bool{true, false, false, false}
 
 	for i := range cases {
-		assert.Equal(t, results[i], IsValidSudoku(cases[i]))
+		assert.Equal(t, results[i], isValidSudoku(cases[i]))
 	}
 }

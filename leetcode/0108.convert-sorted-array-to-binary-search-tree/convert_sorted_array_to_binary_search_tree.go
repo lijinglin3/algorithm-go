@@ -1,12 +1,8 @@
 package leetcode
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func SortedArrayToBST(nums []int) *TreeNode {
+func sortedArrayToBST(nums []int) *TreeNode {
 	length := len(nums)
 	if length == 0 {
 		return nil
@@ -15,5 +11,5 @@ func SortedArrayToBST(nums []int) *TreeNode {
 	mid := length / 2
 	left := nums[:mid]
 	right := nums[mid+1:]
-	return &TreeNode{Val: nums[mid], Left: SortedArrayToBST(left), Right: SortedArrayToBST(right)}
+	return &TreeNode{Val: nums[mid], Left: sortedArrayToBST(left), Right: sortedArrayToBST(right)}
 }

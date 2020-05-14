@@ -2,12 +2,12 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func MaxDepth(root *TreeNode) int {
+func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	left := MaxDepth(root.Left)
-	right := MaxDepth(root.Right)
+	left := maxDepth(root.Left)
+	right := maxDepth(root.Right)
 
 	if left > right {
 		return left + 1
@@ -16,7 +16,7 @@ func MaxDepth(root *TreeNode) int {
 
 }
 
-func MaxDepthByBFS(root *TreeNode) int {
+func maxDepthByBFS(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -40,7 +40,7 @@ func MaxDepthByBFS(root *TreeNode) int {
 	return depth
 }
 
-func MaxDepthByDFS(root *TreeNode) int {
+func maxDepthByDFS(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

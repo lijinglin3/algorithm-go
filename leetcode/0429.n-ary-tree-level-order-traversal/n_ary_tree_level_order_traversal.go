@@ -2,7 +2,7 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func LevelOrder(root *Node) [][]int {
+func levelOrder(root *Node) [][]int {
 	if root == nil {
 		return nil
 	}

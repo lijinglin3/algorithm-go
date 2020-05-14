@@ -9,11 +9,13 @@ type node struct {
 	value interface{}
 }
 
+// LinkedList 链表
 type LinkedList struct {
 	head   *node
 	length int
 }
 
+// NewLinkedList 初始化一个链表
 func NewLinkedList() *LinkedList {
 	return &LinkedList{nil, 0}
 }
@@ -25,6 +27,7 @@ func (list *LinkedList) outOfRange(index int) bool {
 	return false
 }
 
+// IsEmpty 判断链表是否为空
 func (list *LinkedList) IsEmpty() bool {
 	if nil == list.head {
 		return true
@@ -32,6 +35,7 @@ func (list *LinkedList) IsEmpty() bool {
 	return false
 }
 
+// Insert 在指定位置插入一个元素
 func (list *LinkedList) Insert(index int, value interface{}) bool {
 	if 0 == index {
 		list.head = &node{list.head, value}
@@ -46,10 +50,12 @@ func (list *LinkedList) Insert(index int, value interface{}) bool {
 	return true
 }
 
+// InsertToHead 在头部插入一个元素
 func (list *LinkedList) InsertToHead(value interface{}) bool {
 	return list.Insert(0, value)
 }
 
+// InsertToTail 在尾部插入一个元素
 func (list *LinkedList) InsertToTail(value interface{}) bool {
 	return list.Insert(list.length, value)
 }
@@ -65,6 +71,7 @@ func (list *LinkedList) findNode(index int) *node {
 	return cur
 }
 
+// Find 查找指定位置的元素
 func (list *LinkedList) Find(index int) interface{} {
 	node := list.findNode(index)
 	if nil == node {
@@ -74,6 +81,7 @@ func (list *LinkedList) Find(index int) interface{} {
 
 }
 
+// Delete 删除指定位置的元素
 func (list *LinkedList) Delete(index int) bool {
 	if 0 == index {
 		list.head = list.head.next

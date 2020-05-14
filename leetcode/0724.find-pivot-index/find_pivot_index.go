@@ -1,6 +1,6 @@
 package leetcode
 
-func PivotIndex(nums []int) int {
+func pivotIndex(nums []int) int {
 	//for i := range nums {
 	//	sum1, sum2 := 0, 0
 	//	for _, m := range nums[:i] {

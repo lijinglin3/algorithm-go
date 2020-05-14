@@ -20,7 +20,7 @@ func TestPreorderTraversal(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], PreorderTraversal(cases[i]))
+		assert.Equal(t, results[i], preorderTraversal(cases[i]))
 	}
 }
 
@@ -37,6 +37,6 @@ func TestPreorderTraversalByStack(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], PreorderTraversalByStack(cases[i]))
+		assert.Equal(t, results[i], preorderTraversalByStack(cases[i]))
 	}
 }

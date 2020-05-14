@@ -29,6 +29,6 @@ func TestHasPathSum(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], HasPathSum(cases[i], sums[i]))
+		assert.Equal(t, results[i], hasPathSum(cases[i], sums[i]))
 	}
 }

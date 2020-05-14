@@ -16,6 +16,6 @@ func TestLengthOfLastWord(t *testing.T) {
 	results := []int{5, 5, 10, 0}
 
 	for i := range cases {
-		assert.Equal(t, results[i], LengthOfLastWord(cases[i]))
+		assert.Equal(t, results[i], lengthOfLastWord(cases[i]))
 	}
 }

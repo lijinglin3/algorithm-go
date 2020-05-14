@@ -1,6 +1,6 @@
 package leetcode
 
-func FirstUniqChar(s string) int {
+func firstUniqChar(s string) int {
 	length := len(s)
 	for i := range s {
 		flag := false

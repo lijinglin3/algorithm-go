@@ -21,7 +21,7 @@ func TestPostorderTraversal(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], PostorderTraversal(cases[i]))
+		assert.Equal(t, results[i], postorderTraversal(cases[i]))
 	}
 }
 
@@ -38,6 +38,6 @@ func TestPostorderTraversalByStack(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], PostorderTraversalByStack(cases[i]))
+		assert.Equal(t, results[i], postorderTraversalByStack(cases[i]))
 	}
 }

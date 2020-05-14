@@ -2,10 +2,12 @@ package leetcode
 
 import "math/rand"
 
+// Solution solution
 type Solution struct {
 	nums []int
 }
 
+// Constructor initialize your solution
 func Constructor(nums []int) Solution {
 	return Solution{nums}
 }

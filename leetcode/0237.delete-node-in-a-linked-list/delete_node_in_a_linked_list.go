@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func DeleteNode(node *ListNode) {
+func deleteNode(node *ListNode) {
 	node.Val = node.Next.Val
 	node.Next = node.Next.Next
 }

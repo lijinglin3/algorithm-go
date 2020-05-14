@@ -1,6 +1,6 @@
 package leetcode
 
-func ReverseBits(num uint32) uint32 {
+func reverseBits(num uint32) uint32 {
 	binary := make([]uint32, 0)
 	for num != 0 {
 		binary = append(binary, num%2)

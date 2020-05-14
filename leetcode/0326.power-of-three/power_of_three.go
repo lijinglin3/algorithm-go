@@ -1,6 +1,6 @@
 package leetcode
 
-func IsPowerOfThree(n int) bool {
+func isPowerOfThree(n int) bool {
 	if n < 1 {
 		return false
 	}

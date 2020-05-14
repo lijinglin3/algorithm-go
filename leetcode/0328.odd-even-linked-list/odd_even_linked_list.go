@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func OddEvenList(head *ListNode) *ListNode {
+func oddEvenList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil || head.Next.Next == nil {
 		return head
 	}

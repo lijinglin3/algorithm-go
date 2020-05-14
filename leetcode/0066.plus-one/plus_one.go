@@ -1,6 +1,6 @@
 package leetcode
 
-func PlusOne(digits []int) []int {
+func plusOne(digits []int) []int {
 	flag := true
 	for i := len(digits) - 1; i >= 0; i-- {
 		if flag {

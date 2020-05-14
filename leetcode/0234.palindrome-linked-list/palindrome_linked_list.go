@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func IsPalindrome(head *ListNode) bool {
+func isPalindrome(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true
 	}

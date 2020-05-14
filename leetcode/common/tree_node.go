@@ -2,12 +2,14 @@ package common
 
 import "encoding/json"
 
+// TreeNode 二叉树节点
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
 
+// NewTreeNode 初始化二叉树
 func NewTreeNode(data interface{}) *TreeNode {
 	switch t := data.(type) {
 	case float64:
@@ -17,6 +19,7 @@ func NewTreeNode(data interface{}) *TreeNode {
 	}
 }
 
+// TreeNodeDecoder 将数组字符串转换成二叉树
 func TreeNodeDecoder(str string) *TreeNode {
 	list := make([]interface{}, 0)
 	if err := json.Unmarshal([]byte(str), &list); err != nil {

@@ -21,6 +21,6 @@ func TestMinDepth(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], MinDepth(cases[i]))
+		assert.Equal(t, results[i], minDepth(cases[i]))
 	}
 }

@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func RemoveElements(head *ListNode, val int) *ListNode {
+func removeElements(head *ListNode, val int) *ListNode {
 	for head != nil && head.Val == val {
 		head = head.Next
 	}

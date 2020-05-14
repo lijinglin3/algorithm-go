@@ -2,7 +2,7 @@ package leetcode
 
 import "strconv"
 
-func FizzBuzz(n int) []string {
+func fizzBuzz(n int) []string {
 	result := make([]string, 0)
 	for i := 1; i <= n; i++ {
 		str := ""

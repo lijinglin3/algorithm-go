@@ -16,6 +16,6 @@ func TestSingleNumber(t *testing.T) {
 	results := []int{1, 4, 1, 0}
 
 	for i := range cases {
-		assert.Equal(t, results[i], SingleNumber(cases[i]))
+		assert.Equal(t, results[i], singleNumber(cases[i]))
 	}
 }

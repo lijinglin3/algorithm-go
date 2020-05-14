@@ -2,11 +2,13 @@ package stack
 
 import "fmt"
 
+// ArrayStack 基于数组实现的栈
 type ArrayStack struct {
 	data []interface{} // 数据
 	top  int           // 栈顶指针
 }
 
+// NewArrayStack 初始化栈
 func NewArrayStack(capacity int) *ArrayStack {
 	if capacity <= 0 {
 		return nil
@@ -17,6 +19,7 @@ func NewArrayStack(capacity int) *ArrayStack {
 	}
 }
 
+// IsEmpty 判断栈是否为空
 func (stack *ArrayStack) IsEmpty() bool {
 	if stack.top < 0 {
 		return true
@@ -24,6 +27,7 @@ func (stack *ArrayStack) IsEmpty() bool {
 	return false
 }
 
+// Push 入栈
 func (stack *ArrayStack) Push(value interface{}) bool {
 	if cap(stack.data) == stack.top+1 {
 		return false
@@ -33,6 +37,7 @@ func (stack *ArrayStack) Push(value interface{}) bool {
 	return true
 }
 
+// Pop 出栈
 func (stack *ArrayStack) Pop() interface{} {
 	if stack.IsEmpty() {
 		return nil
@@ -42,6 +47,7 @@ func (stack *ArrayStack) Pop() interface{} {
 	return value
 }
 
+// Top 查询栈顶元素
 func (stack *ArrayStack) Top() interface{} {
 	if stack.IsEmpty() {
 		return nil
@@ -49,6 +55,7 @@ func (stack *ArrayStack) Top() interface{} {
 	return stack.data[stack.top]
 }
 
+// Flush 清空栈
 func (stack *ArrayStack) Flush() {
 	stack.top = -1
 }

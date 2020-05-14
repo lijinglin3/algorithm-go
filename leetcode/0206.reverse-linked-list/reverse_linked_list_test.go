@@ -4,25 +4,27 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
+	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
 )
 
 func TestReverseList(t *testing.T) {
-	if !assert.ElementsMatch(t, []int{}, toSlice(ReverseList(toListNode([]int{})))) {
+	if !assert.ElementsMatch(t, []int{}, toSlice(reverseList(toListNode([]int{})))) {
 		t.Fail()
 	}
 
-	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(ReverseList(toListNode([]int{5, 4, 3, 2, 1})))) {
+	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(reverseList(toListNode([]int{5, 4, 3, 2, 1})))) {
 		t.Fail()
 	}
 	return
 }
 
 func TestReverseListByRecursion(t *testing.T) {
-	if !assert.ElementsMatch(t, []int{}, toSlice(ReverseListByRecursion(toListNode([]int{})))) {
+	if !assert.ElementsMatch(t, []int{}, toSlice(reverseListByRecursion(toListNode([]int{})))) {
 		t.Fail()
 	}
 
-	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(ReverseListByRecursion(toListNode([]int{5, 4, 3, 2, 1})))) {
+	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(reverseListByRecursion(toListNode([]int{5, 4, 3, 2, 1})))) {
 		t.Fail()
 	}
 	return

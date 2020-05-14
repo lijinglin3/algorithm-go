@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-func MyAtoi(str string) int {
+func myAtoi(str string) int {
 	result := ""
 	b1, b2 := false, false
 	for _, v := range str {

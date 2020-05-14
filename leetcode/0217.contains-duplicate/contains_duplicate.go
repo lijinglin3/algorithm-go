@@ -1,6 +1,6 @@
 package leetcode
 
-func ContainsDuplicate(nums []int) bool {
+func containsDuplicate(nums []int) bool {
 	m := make(map[int]interface{})
 	for _, n := range nums {
 		if _, exist := m[n]; exist {

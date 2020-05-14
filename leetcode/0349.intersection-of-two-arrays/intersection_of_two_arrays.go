@@ -1,6 +1,6 @@
 package leetcode
 
-func Intersection(nums1 []int, nums2 []int) []int {
+func intersection(nums1 []int, nums2 []int) []int {
 	result := make([]int, 0)
 	m := make(map[int]int)
 	for _, n := range nums1 {

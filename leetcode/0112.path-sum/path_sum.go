@@ -2,7 +2,7 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func HasPathSum(root *TreeNode, sum int) bool {
+func hasPathSum(root *TreeNode, sum int) bool {
 	if nil == root {
 		return false
 	}

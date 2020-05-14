@@ -2,11 +2,13 @@ package leetcode
 
 import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
+// BSTIterator BSTIterator
 type BSTIterator struct {
 	stack  []*TreeNode
 	length int
 }
 
+// Constructor initialize your BSTIterator
 func Constructor(root *TreeNode) BSTIterator {
 	if root == nil {
 		return BSTIterator{}

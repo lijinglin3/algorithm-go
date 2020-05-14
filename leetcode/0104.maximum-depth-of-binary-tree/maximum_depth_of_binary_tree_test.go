@@ -21,8 +21,8 @@ func TestMaxDepth(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], MaxDepth(cases[i]))
-		assert.Equal(t, results[i], MaxDepthByBFS(cases[i]))
-		assert.Equal(t, results[i], MaxDepthByDFS(cases[i]))
+		assert.Equal(t, results[i], maxDepth(cases[i]))
+		assert.Equal(t, results[i], maxDepthByBFS(cases[i]))
+		assert.Equal(t, results[i], maxDepthByDFS(cases[i]))
 	}
 }

@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
 
-func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	result, tmp := &ListNode{}, &ListNode{}
 	cur := result
 	for l1 != nil && l2 != nil {

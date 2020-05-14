@@ -2,12 +2,14 @@ package queue
 
 import "fmt"
 
+// ArrayQueue 基于数组实现的消息队列
 type ArrayQueue struct {
 	data []interface{}
 	head int
 	tail int
 }
 
+// NewArrayQueue 初始化队列
 func NewArrayQueue(capacity int) *ArrayQueue {
 	if capacity <= 0 {
 		return nil
@@ -19,18 +21,22 @@ func NewArrayQueue(capacity int) *ArrayQueue {
 	}
 }
 
+// Length 获取队列长度
 func (queue *ArrayQueue) Length() int {
 	return queue.tail - queue.head
 }
 
+// IsEmpty 判断队列是否为空
 func (queue *ArrayQueue) IsEmpty() bool {
 	return queue.tail == queue.head
 }
 
+// IsFull 判断队列是否已满
 func (queue *ArrayQueue) IsFull() bool {
 	return (queue.tail - queue.head) == cap(queue.data)
 }
 
+// EnQueue 入队列
 func (queue *ArrayQueue) EnQueue(value interface{}) bool {
 	if queue.IsFull() {
 		return false
@@ -47,6 +53,7 @@ func (queue *ArrayQueue) EnQueue(value interface{}) bool {
 	return true
 }
 
+// DeQueue 出队列
 func (queue *ArrayQueue) DeQueue() interface{} {
 	if queue.IsEmpty() {
 		return nil
