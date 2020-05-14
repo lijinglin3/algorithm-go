@@ -11,6 +11,6 @@ import (
 func TestSearchBST(t *testing.T) {
 	bst := TreeNodeDecoder("[4, 2, 7, 1, 3]")
 	assert.Equal(t, TreeNodeDecoder("[2, 1, 3]"), searchBST(bst, 2))
-	assert.Equal(t, nil, searchBST(bst, 5))
-	assert.Equal(t, nil, searchBST(nil, 0))
+	assert.Equal(t, (*TreeNode)(nil), searchBST(bst, 5))
+	assert.Equal(t, (*TreeNode)(nil), searchBST(nil, 0))
 }
