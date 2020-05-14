@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func isSymmetric(root *TreeNode) bool {
 	queue := []*TreeNode{root, root}

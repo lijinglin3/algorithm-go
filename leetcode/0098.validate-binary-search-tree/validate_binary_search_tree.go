@@ -3,7 +3,7 @@ package leetcode
 import (
 	"math"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	. "github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func isValidBST(root *TreeNode) bool {

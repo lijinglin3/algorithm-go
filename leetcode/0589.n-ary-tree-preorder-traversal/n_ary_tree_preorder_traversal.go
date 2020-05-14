@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 // Preorder 递归方式实现的前序遍历
 func Preorder(root *Node) []int {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestIsPalindrome(t *testing.T) {
@@ -32,9 +32,9 @@ func TestIsPalindrome(t *testing.T) {
 	return
 }
 
-func toListNode(values []int) (node *ListNode) {
+func toListNode(values []int) (node *leetcode.ListNode) {
 	for _, v := range values {
-		node = &ListNode{Val: v, Next: node}
+		node = &leetcode.ListNode{Val: v, Next: node}
 	}
 	return
 }

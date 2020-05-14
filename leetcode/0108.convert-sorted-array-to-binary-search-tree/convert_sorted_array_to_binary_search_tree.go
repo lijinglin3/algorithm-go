@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func sortedArrayToBST(nums []int) *TreeNode {
 	length := len(nums)

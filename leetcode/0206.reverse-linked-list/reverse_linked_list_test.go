@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestReverseList(t *testing.T) {
@@ -30,7 +30,7 @@ func TestReverseListByRecursion(t *testing.T) {
 	return
 }
 
-func toSlice(node *ListNode) (values []int) {
+func toSlice(node *leetcode.ListNode) (values []int) {
 	for node != nil {
 		values = append(values, node.Val)
 		node = node.Next
@@ -38,9 +38,9 @@ func toSlice(node *ListNode) (values []int) {
 	return
 }
 
-func toListNode(values []int) (node *ListNode) {
+func toListNode(values []int) (node *leetcode.ListNode) {
 	for _, v := range values {
-		node = &ListNode{Val: v, Next: node}
+		node = &leetcode.ListNode{Val: v, Next: node}
 	}
 	return
 }

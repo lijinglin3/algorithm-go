@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func searchBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {

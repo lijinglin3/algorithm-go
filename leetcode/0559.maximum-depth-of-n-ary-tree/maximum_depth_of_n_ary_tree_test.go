@@ -5,12 +5,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestMaxDepth(t *testing.T) {
-	cases := []*Node{
-		NodeExample1,
+	cases := []*leetcode.Node{
+		leetcode.NodeExample1,
 		{},
 		nil,
 	}

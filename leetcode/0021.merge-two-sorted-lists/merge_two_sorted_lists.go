@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	result, tmp := &ListNode{}, &ListNode{}

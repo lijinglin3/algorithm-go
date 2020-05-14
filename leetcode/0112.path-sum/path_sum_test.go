@@ -5,13 +5,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestHasPathSum(t *testing.T) {
-	cases := []*TreeNode{
-		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
-		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+	cases := []*leetcode.TreeNode{
+		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

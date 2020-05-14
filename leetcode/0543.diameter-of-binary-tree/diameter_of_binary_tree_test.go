@@ -3,13 +3,14 @@ package leetcode
 import (
 	"testing"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestDiameterOfBinaryTree(t *testing.T) {
-	cases := []*TreeNode{
-		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+	cases := []*leetcode.TreeNode{
+		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

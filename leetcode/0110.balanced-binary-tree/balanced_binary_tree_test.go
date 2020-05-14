@@ -5,14 +5,14 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	. "github.com/lijinglin2019/algorithm-go/leetcode/common"
+	"github.com/lijinglin2019/algorithm-go/leetcode"
 )
 
 func TestIsBalanced(t *testing.T) {
-	cases := []*TreeNode{
-		TreeNodeDecoder("[1, 2, 3, 4, 5]"),
-		TreeNodeDecoder("[1, 2, 2, 3, null, 4]"),
-		TreeNodeDecoder("[1, null, 2, null, 3]"),
+	cases := []*leetcode.TreeNode{
+		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		leetcode.TreeNodeDecoder("[1, 2, 2, 3, null, 4]"),
+		leetcode.TreeNodeDecoder("[1, null, 2, null, 3]"),
 		{},
 		nil,
 	}

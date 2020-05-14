@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode/common"
+import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	len1, len2 := 0, 0

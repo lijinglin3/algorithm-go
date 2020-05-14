@@ -1,6 +1,12 @@
-package common
+package leetcode
 
 import "encoding/json"
+
+// ListNode 链表节点
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 // TreeNode 二叉树节点
 type TreeNode struct {
@@ -59,3 +65,21 @@ func TreeNodeDecoder(str string) *TreeNode {
 
 	return root
 }
+
+// Node N叉树节点
+type Node struct {
+	Val      int
+	Children []*Node
+}
+
+var (
+	// NodeExample1 测试用例1
+	NodeExample1 = &Node{
+		Val: 0,
+		Children: []*Node{
+			{Val: 1, Children: []*Node{{Val: 4}, {Val: 5}, {Val: 6}}},
+			{Val: 2},
+			{Val: 3},
+		},
+	}
+)
