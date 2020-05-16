@@ -8,8 +8,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// ListNodeDecoder 将数组字符串转换成链表
-func ListNodeDecoder(str string) *ListNode {
+// NewListNode 将数组字符串转换成链表
+func NewListNode(str string) *ListNode {
 	list := make([]int, 0)
 	if err := json.Unmarshal([]byte(str), &list); err != nil {
 		panic(err)
@@ -29,6 +29,7 @@ func ListNodeDecoder(str string) *ListNode {
 	return listNode
 }
 
+// Last return latest node
 func (l *ListNode) Last() *ListNode {
 	n := l
 	for n != nil {
@@ -47,8 +48,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// NewTreeNode 初始化二叉树
-func NewTreeNode(data interface{}) *TreeNode {
+func newTreeNode(data interface{}) *TreeNode {
 	switch t := data.(type) {
 	case float64:
 		return &TreeNode{Val: int(t)}
@@ -57,8 +57,8 @@ func NewTreeNode(data interface{}) *TreeNode {
 	}
 }
 
-// TreeNodeDecoder 将数组字符串转换成二叉树
-func TreeNodeDecoder(str string) *TreeNode {
+// NewTreeNode 将数组字符串转换成二叉树
+func NewTreeNode(str string) *TreeNode {
 	list := make([]interface{}, 0)
 	if err := json.Unmarshal([]byte(str), &list); err != nil {
 		panic(err)
@@ -68,14 +68,14 @@ func TreeNodeDecoder(str string) *TreeNode {
 		return nil
 	}
 
-	root := NewTreeNode(list[0])
+	root := newTreeNode(list[0])
 	queue := []*TreeNode{root}
 	index, length := 1, len(list)
 	for len(queue) != 0 {
 		newQueue := make([]*TreeNode, 0)
 		for _, n := range queue {
 			if index < length {
-				left := NewTreeNode(list[index])
+				left := newTreeNode(list[index])
 				if left != nil {
 					n.Left = left
 					newQueue = append(newQueue, left)
@@ -84,7 +84,7 @@ func TreeNodeDecoder(str string) *TreeNode {
 			index++
 
 			if index < length {
-				right := NewTreeNode(list[index])
+				right := newTreeNode(list[index])
 				if right != nil {
 					n.Right = right
 					newQueue = append(newQueue, right)

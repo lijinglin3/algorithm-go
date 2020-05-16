@@ -7,7 +7,7 @@ import (
 )
 
 func TestListNodeDecoder(t *testing.T) {
-	assert.Panics(t, func() { ListNodeDecoder("") })
+	assert.Panics(t, func() { NewListNode("") })
 
 	cases := []string{
 		"[]",
@@ -34,18 +34,18 @@ func TestListNodeDecoder(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], ListNodeDecoder(cases[i]))
+		assert.Equal(t, results[i], NewListNode(cases[i]))
 	}
 }
 
 func TestListNode_Last(t *testing.T) {
-	list := ListNodeDecoder("[1, 2, 3, 4, 5]")
-	assert.Equal(t, ListNodeDecoder("[5]"), list.Last())
+	list := NewListNode("[1, 2, 3, 4, 5]")
+	assert.Equal(t, NewListNode("[5]"), list.Last())
 	assert.Equal(t, (*ListNode)(nil), (*ListNode)(nil).Last())
 }
 
 func TestTreeNodeDecoder(t *testing.T) {
-	assert.Panics(t, func() { TreeNodeDecoder("") })
+	assert.Panics(t, func() { NewTreeNode("") })
 
 	cases := []string{
 		"[]",
@@ -123,6 +123,6 @@ func TestTreeNodeDecoder(t *testing.T) {
 	}
 
 	for i := range cases {
-		assert.Equal(t, results[i], TreeNodeDecoder(cases[i]))
+		assert.Equal(t, results[i], NewTreeNode(cases[i]))
 	}
 }

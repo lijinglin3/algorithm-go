@@ -9,10 +9,10 @@ import (
 )
 
 func TestDetectCycle(t *testing.T) {
-	listNode := leetcode.ListNodeDecoder("[1, 2, 3, 4]")
+	listNode := leetcode.NewListNode("[1, 2, 3, 4]")
 	assert.Equal(t, (*leetcode.ListNode)(nil), detectCycle(listNode))
 
-	listNode = leetcode.ListNodeDecoder("[1, 2, 3, 4, 5]")
+	listNode = leetcode.NewListNode("[1, 2, 3, 4, 5]")
 	assert.Equal(t, (*leetcode.ListNode)(nil), detectCycle(listNode))
 
 	listNode.Next.Next.Next.Next.Next = listNode.Next.Next

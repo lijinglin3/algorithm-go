@@ -10,8 +10,8 @@ import (
 
 func TestHasPathSum(t *testing.T) {
 	cases := []*leetcode.TreeNode{
-		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
-		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		leetcode.NewTreeNode("[1, 2, 3, 4, 5]"),
+		leetcode.NewTreeNode("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

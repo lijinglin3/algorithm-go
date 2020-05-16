@@ -9,11 +9,11 @@ import (
 )
 
 func TestGetIntersectionNode(t *testing.T) {
-	list1 := leetcode.ListNodeDecoder("[1, 2, 3]")
-	list2 := leetcode.ListNodeDecoder("[1, 2, 3, 4]")
+	list1 := leetcode.NewListNode("[1, 2, 3]")
+	list2 := leetcode.NewListNode("[1, 2, 3, 4]")
 	assert.Equal(t, (*leetcode.ListNode)(nil), getIntersectionNode(list1, list2))
 
-	common := leetcode.ListNodeDecoder("[7, 8, 9]")
+	common := leetcode.NewListNode("[7, 8, 9]")
 	assert.Equal(t, common, getIntersectionNode(common, common))
 	assert.Equal(t, (*leetcode.ListNode)(nil), getIntersectionNode(common, (*leetcode.ListNode)(nil)))
 

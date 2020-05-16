@@ -10,9 +10,9 @@ import (
 
 func TestIsSymmetric(t *testing.T) {
 	cases := []*leetcode.TreeNode{
-		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
-		leetcode.TreeNodeDecoder("[1, 2, 2, 3, null, 4]"),
-		leetcode.TreeNodeDecoder("[1, 2, 2, 3, 4, 4, 3]"),
+		leetcode.NewTreeNode("[1, 2, 3, 4, 5]"),
+		leetcode.NewTreeNode("[1, 2, 2, 3, null, 4]"),
+		leetcode.NewTreeNode("[1, 2, 2, 3, 4, 4, 3]"),
 		{},
 		nil,
 	}

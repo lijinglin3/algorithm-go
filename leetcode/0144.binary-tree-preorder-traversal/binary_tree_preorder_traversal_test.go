@@ -10,7 +10,7 @@ import (
 
 func TestPreorderTraversal(t *testing.T) {
 	cases := []*leetcode.TreeNode{
-		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		leetcode.NewTreeNode("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}
@@ -27,7 +27,7 @@ func TestPreorderTraversal(t *testing.T) {
 
 func TestPreorderTraversalByStack(t *testing.T) {
 	cases := []*leetcode.TreeNode{
-		leetcode.TreeNodeDecoder("[1, 2, 3, 4, 5]"),
+		leetcode.NewTreeNode("[1, 2, 3, 4, 5]"),
 		{},
 		nil,
 	}

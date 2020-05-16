@@ -9,7 +9,7 @@ import (
 )
 
 func TestIsValidBST(t *testing.T) {
-	assert.Equal(t, true, isValidBST(leetcode.TreeNodeDecoder("[2, 1, 3]")))
+	assert.Equal(t, true, isValidBST(leetcode.NewTreeNode("[2, 1, 3]")))
 	assert.Equal(t, false,
-		isValidBST(leetcode.TreeNodeDecoder("[5, 1, 4, null, null, 3, 6]")))
+		isValidBST(leetcode.NewTreeNode("[5, 1, 4, null, null, 3, 6]")))
 }
