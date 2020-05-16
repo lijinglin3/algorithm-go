@@ -25,25 +25,12 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 		}
 	}
 
-	for {
+	for p1 != nil || p2 != nil {
 		if p1 == p2 {
 			return p1
 		}
 
-		p1 = p1.Next
-		if p1 == nil {
-			return nil
-		}
-		if p1 == p2 {
-			return p1
-		}
-
-		p2 = p2.Next
-		if p2 == nil {
-			return nil
-		}
-		if p1 == p2 {
-			return p1
-		}
+		p1, p2 = p1.Next, p2.Next
 	}
+	return nil
 }

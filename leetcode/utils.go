@@ -29,6 +29,17 @@ func ListNodeDecoder(str string) *ListNode {
 	return listNode
 }
 
+func (l *ListNode) Last() *ListNode {
+	n := l
+	for n != nil {
+		if n.Next == nil {
+			return n
+		}
+		n = n.Next
+	}
+	return nil
+}
+
 // TreeNode 二叉树节点
 type TreeNode struct {
 	Val   int

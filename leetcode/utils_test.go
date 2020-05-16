@@ -38,6 +38,12 @@ func TestListNodeDecoder(t *testing.T) {
 	}
 }
 
+func TestListNode_Last(t *testing.T) {
+	list := ListNodeDecoder("[1, 2, 3, 4, 5]")
+	assert.Equal(t, ListNodeDecoder("[5]"), list.Last())
+	assert.Equal(t, (*ListNode)(nil), (*ListNode)(nil).Last())
+}
+
 func TestTreeNodeDecoder(t *testing.T) {
 	assert.Panics(t, func() { TreeNodeDecoder("") })
 
