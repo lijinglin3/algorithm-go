@@ -12,3 +12,5 @@ func maxSubArray(nums []int) int {
 	}
 	return sum
 }
+
+// TODO 尝试分治法
