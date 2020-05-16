@@ -8,6 +8,27 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// ListNodeDecoder 将数组字符串转换成链表
+func ListNodeDecoder(str string) *ListNode {
+	list := make([]int, 0)
+	if err := json.Unmarshal([]byte(str), &list); err != nil {
+		panic(err)
+	}
+
+	length := len(list)
+	if length == 0 {
+		return nil
+	}
+
+	listNode := &ListNode{Val: list[0]}
+	tmp := listNode
+	for i := 1; i < length; i++ {
+		tmp.Next = &ListNode{Val: list[i]}
+		tmp = tmp.Next
+	}
+	return listNode
+}
+
 // TreeNode 二叉树节点
 type TreeNode struct {
 	Val   int

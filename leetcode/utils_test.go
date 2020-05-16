@@ -6,7 +6,39 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestListToTreeNode(t *testing.T) {
+func TestListNodeDecoder(t *testing.T) {
+	assert.Panics(t, func() { ListNodeDecoder("") })
+
+	cases := []string{
+		"[]",
+		"[1, 2, 3, 4, 5]",
+	}
+	results := []*ListNode{
+		nil,
+		{
+			Val: 1,
+			Next: &ListNode{
+				Val: 2,
+				Next: &ListNode{
+					Val: 3,
+					Next: &ListNode{
+						Val: 4,
+						Next: &ListNode{
+							Val:  5,
+							Next: nil,
+						},
+					},
+				},
+			},
+		},
+	}
+
+	for i := range cases {
+		assert.Equal(t, results[i], ListNodeDecoder(cases[i]))
+	}
+}
+
+func TestTreeNodeDecoder(t *testing.T) {
 	assert.Panics(t, func() { TreeNodeDecoder("") })
 
 	cases := []string{
