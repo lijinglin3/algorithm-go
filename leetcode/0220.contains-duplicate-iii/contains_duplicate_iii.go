@@ -15,3 +15,5 @@ func containsNearbyAlmostDuplicate(nums []int, k int, t int) bool {
 	}
 	return false
 }
+
+// TODO 尝试其他方法
