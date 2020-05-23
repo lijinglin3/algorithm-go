@@ -38,9 +38,10 @@ func pathSum(root *TreeNode, sum int) [][]int {
 	return result
 }
 
-var res = make([][]int, 0)
+var res [][]int
 
 func pathSum2(root *TreeNode, sum int) [][]int {
+	res = make([][]int, 0)
 	dfs(root, sum, []int{})
 	return res
 }
