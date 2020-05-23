@@ -13,9 +13,8 @@ func dfs(root *TreeNode, sum int, prefix int) int {
 	if root == nil {
 		return 0
 	}
-	res := 0
 	prefix += root.Val
-	res += count[prefix-sum]
+	res := count[prefix-sum]
 	count[prefix]++
 	res += dfs(root.Left, sum, prefix) + dfs(root.Right, sum, prefix)
 	count[prefix]--
