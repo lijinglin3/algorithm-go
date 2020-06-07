@@ -8,7 +8,7 @@ func convertToTitle(n int) string {
 			result = "Z" + result
 			n = n - 26
 		} else {
-			result = string(n%26+64) + result
+			result = string(rune(n%26+64)) + result
 		}
 		n = n / 26
 	}
