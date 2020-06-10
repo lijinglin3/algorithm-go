@@ -1,6 +1,6 @@
 package leetcode
 
-func rotate(matrix [][]int)  {
+func rotate(matrix [][]int) {
 	length := len(matrix)
 	if length <= 1 {
 		return
