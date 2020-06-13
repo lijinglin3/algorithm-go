@@ -28,7 +28,7 @@ func subarraySum2(nums []int, k int) int {
 		if _, ok := m[pre-k]; ok {
 			count += m[pre-k]
 		}
-		m[pre] += 1
+		m[pre]++
 	}
 	return count
 }
