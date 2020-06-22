@@ -8,4 +8,5 @@ import (
 
 func TestFindLeastNumOfUniqueInts(t *testing.T) {
 	assert.Equal(t, 1, findLeastNumOfUniqueInts([]int{5, 5, 4}, 1))
+	assert.Equal(t, 0, findLeastNumOfUniqueInts([]int{}, 0))
 }
