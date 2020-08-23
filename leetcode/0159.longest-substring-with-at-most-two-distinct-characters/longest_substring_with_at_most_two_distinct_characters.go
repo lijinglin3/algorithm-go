@@ -4,7 +4,7 @@ func lengthOfLongestSubstringTwoDistinct(s string) int {
 	var res int
 	windows := make(map[rune]int)
 	left, right := 0, 0
-	var overMax bool // 当map长度超过2时，overMax为true
+	var overMax bool
 	for right < len(s) {
 		windows[rune(s[right])]++
 		if len(windows) > 2 {
