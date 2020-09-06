@@ -7,11 +7,7 @@ func groupStrings(strings []string) [][]string {
 
 	for _, v := range strings {
 		h := hash(v)
-		if _, ok := tmp[h]; ok {
-			tmp[h] = append(tmp[h], v)
-		} else {
-			tmp[h] = []string{v}
-		}
+		tmp[h] = append(tmp[h], v)
 	}
 
 	result := make([][]string, 0, len(tmp))

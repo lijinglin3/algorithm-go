@@ -16,7 +16,6 @@ func TestReverseList(t *testing.T) {
 	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(reverseList(toListNode([]int{5, 4, 3, 2, 1})))) {
 		t.Fail()
 	}
-	return
 }
 
 func TestReverseListByRecursion(t *testing.T) {
@@ -27,7 +26,6 @@ func TestReverseListByRecursion(t *testing.T) {
 	if !assert.ElementsMatch(t, []int{1, 2, 3, 4, 5}, toSlice(reverseListByRecursion(toListNode([]int{5, 4, 3, 2, 1})))) {
 		t.Fail()
 	}
-	return
 }
 
 func toSlice(node *leetcode.ListNode) (values []int) {

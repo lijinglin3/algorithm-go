@@ -3,7 +3,7 @@ package leetcode
 func reverseVowels(s string) string {
 	v := []byte(s)
 	l, r := 0, len(s)-1
-	for true {
+	for {
 		for l < r {
 			if isVowels(v[l]) {
 				break

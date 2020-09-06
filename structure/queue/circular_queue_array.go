@@ -14,23 +14,17 @@ func NewCircularQueue(capacity int) *CircularQueue {
 	if capacity == 0 {
 		return nil
 	}
-	return &CircularQueue{make([]interface{}, capacity, capacity), 0, 0}
+	return &CircularQueue{make([]interface{}, capacity), 0, 0}
 }
 
 // IsEmpty 判断队列是否为空
 func (queue *CircularQueue) IsEmpty() bool {
-	if queue.head == queue.tail {
-		return true
-	}
-	return false
+	return queue.head == queue.tail
 }
 
 // IsFull 判断队列是否已满
 func (queue *CircularQueue) IsFull() bool {
-	if queue.head == (queue.tail+1)%cap(queue.data) {
-		return true
-	}
-	return false
+	return queue.head == (queue.tail+1)%cap(queue.data)
 }
 
 // EnQueue 入队列

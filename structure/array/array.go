@@ -14,7 +14,7 @@ type Array struct {
 func NewArray(capacity int) *Array {
 	if capacity > 0 {
 		return &Array{
-			data:   make([]interface{}, capacity, capacity),
+			data:   make([]interface{}, capacity),
 			length: 0,
 		}
 	}

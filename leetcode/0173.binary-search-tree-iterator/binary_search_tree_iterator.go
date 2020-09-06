@@ -44,10 +44,7 @@ func (iterator *BSTIterator) Next() int {
 
 // HasNext return whether we have a next smallest number
 func (iterator *BSTIterator) HasNext() bool {
-	if iterator.length != 0 {
-		return true
-	}
-	return false
+	return iterator.length != 0
 }
 
 /**

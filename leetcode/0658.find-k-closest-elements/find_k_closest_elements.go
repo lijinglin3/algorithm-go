@@ -21,7 +21,6 @@ func findClosestElements(arr []int, k int, x int) []int {
 	div := abs(arr[m] - x)
 	base := m
 	if m > 0 && abs(arr[m-1]-x) <= div {
-		div = abs(arr[m-1] - x)
 		base = m - 1
 	}
 

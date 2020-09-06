@@ -3,7 +3,8 @@ package leetcode
 import . "github.com/lijinglin2019/algorithm-go/leetcode"
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	result, tmp := &ListNode{}, &ListNode{}
+	var tmp *ListNode
+	result := &ListNode{}
 	cur := result
 	for l1 != nil && l2 != nil {
 		if l1.Val < l2.Val {

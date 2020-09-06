@@ -6,8 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type s []int
-
 func TestMaxProfit(t *testing.T) {
 	cases := [][]int{
 		{},

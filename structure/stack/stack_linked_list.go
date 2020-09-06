@@ -19,10 +19,7 @@ func NewLinkedListStack() *LinkedListStack {
 
 // IsEmpty 判断栈是否为空
 func (stack *LinkedListStack) IsEmpty() bool {
-	if nil == stack.top {
-		return true
-	}
-	return false
+	return nil == stack.top
 }
 
 // Push 入栈

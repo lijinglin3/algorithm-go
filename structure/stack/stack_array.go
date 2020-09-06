@@ -14,17 +14,14 @@ func NewArrayStack(capacity int) *ArrayStack {
 		return nil
 	}
 	return &ArrayStack{
-		data: make([]interface{}, capacity, capacity),
+		data: make([]interface{}, capacity),
 		top:  -1,
 	}
 }
 
 // IsEmpty 判断栈是否为空
 func (stack *ArrayStack) IsEmpty() bool {
-	if stack.top < 0 {
-		return true
-	}
-	return false
+	return stack.top < 0
 }
 
 // Push 入栈

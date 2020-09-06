@@ -50,16 +50,10 @@ func (q *MyCircularQueue) Rear() int {
 
 // IsEmpty checks whether the circular queue is empty or not
 func (q *MyCircularQueue) IsEmpty() bool {
-	if len(q.queue) == 0 {
-		return true
-	}
-	return false
+	return len(q.queue) == 0
 }
 
 // IsFull checks whether the circular queue is full or not
 func (q *MyCircularQueue) IsFull() bool {
-	if len(q.queue) >= q.size {
-		return true
-	}
-	return false
+	return len(q.queue) >= q.size
 }

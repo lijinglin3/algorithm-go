@@ -29,10 +29,7 @@ func (list *LinkedList) outOfRange(index int) bool {
 
 // IsEmpty 判断链表是否为空
 func (list *LinkedList) IsEmpty() bool {
-	if nil == list.head {
-		return true
-	}
-	return false
+	return nil == list.head
 }
 
 // Insert 在指定位置插入一个元素

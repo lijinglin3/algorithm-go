@@ -11,10 +11,10 @@ func numSquares(n int) int {
 	}
 
 	for i := len(dp); i <= n; i++ {
-		mid, p, j := n, n, 1
+		mid, j := n, 1
 		for ; i >= sum[j]; j++ {
-			p = min(dp[i-sum[j]]+1, mid)
-			mid = p
+			mid = min(dp[i-sum[j]]+1, mid)
+
 		}
 		dp = append(dp, mid)
 	}

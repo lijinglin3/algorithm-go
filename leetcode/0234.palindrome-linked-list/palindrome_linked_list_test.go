@@ -28,8 +28,6 @@ func TestIsPalindrome(t *testing.T) {
 	if !assert.Equal(t, false, isPalindrome(toListNode([]int{1, 2, 3}))) {
 		t.Fail()
 	}
-
-	return
 }
 
 func toListNode(values []int) (node *leetcode.ListNode) {

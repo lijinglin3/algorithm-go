@@ -15,7 +15,7 @@ func NewArrayQueue(capacity int) *ArrayQueue {
 		return nil
 	}
 	return &ArrayQueue{
-		data: make([]interface{}, capacity, capacity),
+		data: make([]interface{}, capacity),
 		head: 0,
 		tail: 0,
 	}
