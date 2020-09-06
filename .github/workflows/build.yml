@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
 
 jobs:
   build:
@@ -27,6 +27,10 @@ jobs:
 
       - name: Lint
         uses: actions-contrib/golangci-lint@v1
+        env:
+          GOROOT: ""
+        with:
+          args: run ./...
 
       - name: Test
         run: go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
