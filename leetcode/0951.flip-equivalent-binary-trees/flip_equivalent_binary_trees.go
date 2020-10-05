@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode"
+import . "github.com/lijinglin3/algorithm-go/leetcode"
 
 func flipEquiv(root1 *TreeNode, root2 *TreeNode) bool {
 	if root1 == nil && root2 == nil {

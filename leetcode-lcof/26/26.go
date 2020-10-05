@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode"
+import . "github.com/lijinglin3/algorithm-go/leetcode"
 
 func isSubStructure(A *TreeNode, B *TreeNode) bool {
 	return (A != nil && B != nil) && (recur(A, B) || isSubStructure(A.Left, B) || isSubStructure(A.Right, B))

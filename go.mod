@@ -1,4 +1,4 @@
-module github.com/lijinglin2019/algorithm-go
+module github.com/lijinglin3/algorithm-go
 
 go 1.15
 

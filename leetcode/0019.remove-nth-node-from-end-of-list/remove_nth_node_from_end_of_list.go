@@ -1,6 +1,6 @@
 package leetcode
 
-import . "github.com/lijinglin2019/algorithm-go/leetcode"
+import . "github.com/lijinglin3/algorithm-go/leetcode"
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	p1, p2 := head, head

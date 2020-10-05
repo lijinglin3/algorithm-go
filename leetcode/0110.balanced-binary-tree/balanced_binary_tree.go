@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	. "github.com/lijinglin2019/algorithm-go/leetcode"
+	. "github.com/lijinglin3/algorithm-go/leetcode"
 )
 
 func isBalanced(root *TreeNode) bool {

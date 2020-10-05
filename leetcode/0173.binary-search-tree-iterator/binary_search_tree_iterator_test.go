@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/lijinglin2019/algorithm-go/leetcode"
+	"github.com/lijinglin3/algorithm-go/leetcode"
 )
 
 func TestConstructor(t *testing.T) {
