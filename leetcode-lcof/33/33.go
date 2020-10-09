@@ -18,3 +18,20 @@ func verifyPostorder(postorder []int) bool {
 	}
 	return true
 }
+
+//func verifyPostorder(postorder []int) bool {
+//	length := len(postorder)
+//	if length == 0 {
+//		return true
+//	}
+//	f := length - 1
+//	for i := 0; i < length; i++ {
+//		if postorder[i] >= postorder[length-1] {
+//			f = i
+//		}
+//		if i > f && postorder[i] < postorder[length-1] {
+//			return false
+//		}
+//	}
+//	return verifyPostorder(postorder[:f]) && verifyPostorder(postorder[f:length-1])
+//}
