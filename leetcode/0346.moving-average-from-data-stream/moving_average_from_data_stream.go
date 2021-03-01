@@ -2,23 +2,24 @@ package leetcode
 
 // MovingAverage ...
 type MovingAverage struct {
-	data []int
-	size int
-	sum  int
+	head, size, sum, count int
+	queue                  []int
 }
 
 // Constructor ...
 func Constructor(size int) MovingAverage {
-	return MovingAverage{data: make([]int, 0, size), size: size}
+	return MovingAverage{queue: make([]int, size), size: size}
 }
 
 // Next ...
 func (a *MovingAverage) Next(val int) float64 {
 	a.sum += val
-	a.data = append(a.data, val)
-	if len(a.data) > a.size {
-		a.sum -= a.data[0]
-		a.data = a.data[1:]
+	if a.count == a.size {
+		a.sum -= a.queue[a.head]
+	} else {
+		a.count++
 	}
-	return float64(a.sum) / float64(len(a.data))
+	a.queue[a.head] = val
+	a.head = (a.head + 1) % a.size
+	return float64(a.sum) / float64(a.count)
 }
