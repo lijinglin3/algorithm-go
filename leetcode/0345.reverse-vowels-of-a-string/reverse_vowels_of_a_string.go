@@ -2,22 +2,12 @@ package leetcode
 
 func reverseVowels(s string) string {
 	v := []byte(s)
-	l, r := 0, len(s)-1
-	for {
-		for l < r {
-			if isVowels(v[l]) {
-				break
-			}
+	for l, r := 0, len(s)-1; l < r; {
+		for l < r && !isVowels(v[l]) {
 			l++
 		}
-		for l < r {
-			if isVowels(v[r]) {
-				break
-			}
+		for l < r && !isVowels(v[r]) {
 			r--
-		}
-		if l >= r {
-			break
 		}
 		v[l], v[r] = v[r], v[l]
 		l++
