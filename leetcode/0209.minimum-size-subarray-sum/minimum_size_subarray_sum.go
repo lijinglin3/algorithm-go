@@ -1,34 +1,26 @@
 package leetcode
 
-import "math"
+import (
+	"math"
+)
 
 func minSubArrayLen(s int, nums []int) int {
-	if len(nums) <= 0 {
+	length := len(nums)
+	if length <= 0 {
 		return 0
 	}
 
-	count := math.MaxInt64
-	sum := nums[0]
-	p1, p2 := 0, 0
-	for {
-		if sum < s {
-			if p2 < len(nums)-1 {
-				p2++
-				sum += nums[p2]
-			} else {
-				break
+	count, start, end, sum := math.MaxInt64, 0, 0, 0
+	for end < length {
+		sum += nums[end]
+		for sum >= s {
+			if count > (end - start + 1) {
+				count = end - start + 1
 			}
-		} else {
-			if p1 < len(nums)-1 {
-				if count > p2-p1+1 {
-					count = p2 - p1 + 1
-				}
-				sum -= nums[p1]
-				p1++
-			} else {
-				break
-			}
+			sum -= nums[start]
+			start++
 		}
+		end++
 	}
 	if count == math.MaxInt64 {
 		return 0
