@@ -1,4 +1,4 @@
-name: check
+name: build
 
 on:
   push:
@@ -32,4 +32,4 @@ jobs:
         run: go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
 
       - name: codecov
-        run: bash <(curl -s https://codecov.io/bash)
+        uses: codecov/codecov-action@v1
