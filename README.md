@@ -1,6 +1,6 @@
 # algorithm-go
 
-[![build](https://github.com/lijinglin3/algorithm-go/workflows/build/badge.svg)](https://github.com/lijinglin3/algorithm-go/actions)
+[![build](https://github.com/lijinglin3/algorithm-go/actions/workflows/build.yml/badge.svg)](https://github.com/lijinglin3/algorithm-go/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/lijinglin3/algorithm-go/branch/master/graph/badge.svg)](https://codecov.io/gh/lijinglin3/algorithm-go)
 [![go-report](https://goreportcard.com/badge/github.com/lijinglin3/algorithm-go)](https://goreportcard.com/report/github.com/lijinglin3/algorithm-go)
 [![leetcode-cn](https://img.shields.io/badge/leetcode--cn-lijinglin-red)](https://leetcode-cn.com/lijinglin)
