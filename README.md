@@ -20,16 +20,20 @@
 - [堆](https://leetcode-cn.com/leetbook/detail/heap/)
 - [N 叉树](https://leetcode-cn.com/leetbook/detail/n-ary-tree/)
 - [前缀树](https://leetcode-cn.com/leetbook/detail/trie/)
+- [并查集](https://leetcode-cn.com/leetbook/detail/disjoint-set/)
 
 ### 算法
 
 - [递归](https://leetcode-cn.com/leetbook/detail/recursion/)
+- [递归和分治精讲](https://leetcode-cn.com/leetbook/detail/recursion-and-divide-and-conquer/)
 - [排序算法全解析](https://leetcode-cn.com/leetbook/detail/sort-algorithms/)
 - [数组类算法](https://leetcode-cn.com/leetbook/detail/all-about-array/)
 - [查找表类算法](https://leetcode-cn.com/leetbook/detail/all-about-lockup-table/)
 - [二分查找](https://leetcode-cn.com/leetbook/detail/binary-search/)
 - [广度优先搜索](https://leetcode-cn.com/leetbook/detail/bfs/)
 - [深度优先搜索](https://leetcode-cn.com/leetbook/detail/dfs/)
+- [贪心算法](https://leetcode-cn.com/leetbook/detail/greedy/)
+- [位运算和数学](https://leetcode-cn.com/leetbook/detail/bit-manipulation-and-math/)
 - [动态规划精讲(一)](https://leetcode-cn.com/leetbook/detail/dynamic-programming-1-plus/)
 - [动态规划精讲(二)](https://leetcode-cn.com/leetbook/detail/dynamic-programming-2-plus/)
 
@@ -54,4 +58,5 @@
 - [LeetCode 刷题攻略](https://github.com/youngyangyang04/leetcode-master)
 - [LeetcodeTop](https://github.com/afatcoder/LeetcodeTop)
 - [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)
+- [LeetCode & Coding Interview Guide](https://doocs.github.io/leetcode)
 - [数据结构和算法动态可视化](https://visualgo.net/zh)
