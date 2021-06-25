@@ -52,7 +52,7 @@ func TestTwoSum(t *testing.T) {
 
 func format(nums []float64) []float64 {
 	for i := range nums {
-		v, _ := strconv.ParseFloat(fmt.Sprintf("%.5f", nums[i]), 10)
+		v, _ := strconv.ParseFloat(fmt.Sprintf("%.5f", nums[i]), 64)
 		nums[i] = v
 	}
 	return nums
