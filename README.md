@@ -13,29 +13,34 @@
 
 - [队列 & 栈](https://leetcode-cn.com/leetbook/detail/queue-stack/)
 - [数组和字符串](https://leetcode-cn.com/leetbook/detail/array-and-string/)
-- [哈希表](https://leetcode-cn.com/leetbook/detail/hash-table/)
 - [链表](https://leetcode-cn.com/leetbook/detail/linked-list/)
+- [哈希表](https://leetcode-cn.com/leetbook/detail/hash-table/)
+- [哈希表](https://leetcode-cn.com/leetbook/detail/hash-table-plus/)
 - [二叉树](https://leetcode-cn.com/leetbook/detail/data-structure-binary-tree/)
 - [二叉搜索树](https://leetcode-cn.com/leetbook/detail/introduction-to-data-structure-binary-search-tree/)
 - [堆](https://leetcode-cn.com/leetbook/detail/heap/)
 - [N 叉树](https://leetcode-cn.com/leetbook/detail/n-ary-tree/)
 - [前缀树](https://leetcode-cn.com/leetbook/detail/trie/)
 - [并查集](https://leetcode-cn.com/leetbook/detail/disjoint-set/)
+- [图](https://leetcode-cn.com/leetbook/detail/graph/)
+- [设计数据结构](https://leetcode-cn.com/leetbook/detail/designing-data-structures/)
 
 ### 算法
 
 - [递归](https://leetcode-cn.com/leetbook/detail/recursion/)
 - [递归和分治精讲](https://leetcode-cn.com/leetbook/detail/recursion-and-divide-and-conquer/)
 - [排序算法全解析](https://leetcode-cn.com/leetbook/detail/sort-algorithms/)
+- [滑动窗口和双指针](https://leetcode-cn.com/leetbook/detail/sliding-window-and-two-pointers/)
 - [数组类算法](https://leetcode-cn.com/leetbook/detail/all-about-array/)
 - [查找表类算法](https://leetcode-cn.com/leetbook/detail/all-about-lockup-table/)
 - [二分查找](https://leetcode-cn.com/leetbook/detail/binary-search/)
 - [广度优先搜索](https://leetcode-cn.com/leetbook/detail/bfs/)
 - [深度优先搜索](https://leetcode-cn.com/leetbook/detail/dfs/)
 - [贪心算法](https://leetcode-cn.com/leetbook/detail/greedy/)
-- [位运算和数学](https://leetcode-cn.com/leetbook/detail/bit-manipulation-and-math/)
 - [动态规划精讲(一)](https://leetcode-cn.com/leetbook/detail/dynamic-programming-1-plus/)
 - [动态规划精讲(二)](https://leetcode-cn.com/leetbook/detail/dynamic-programming-2-plus/)
+- [DP-路径问题](https://leetcode-cn.com/leetbook/detail/path-problems-in-dynamic-programming/)
+- [位运算和数学](https://leetcode-cn.com/leetbook/detail/bit-manipulation-and-math/)
 
 ### 综合
 
@@ -44,11 +49,10 @@
 - [算法面试题汇总](https://leetcode-cn.com/leetbook/detail/top-interview-questions/)
 - [算法与面试技巧精讲](https://leetcode-cn.com/leetbook/detail/algorithm-and-interview-skills/)
 - [高频算法实战](https://leetcode-cn.com/leetbook/detail/high-frequency-algorithm-exercise/)
-- [LeetCode Cookbook](https://leetcode-cn.com/leetbook/detail/leetcode-cookbook/)
-- [2020 名企高频面试题](https://leetcode-cn.com/leetbook/detail/2020-top-interview-questions/)
 - [初级算法](https://leetcode-cn.com/leetbook/detail/top-interview-questions-easy/)
 - [中级算法](https://leetcode-cn.com/leetbook/detail/top-interview-questions-medium/)
 - [高级算法](https://leetcode-cn.com/leetbook/detail/top-interview-questions-hard/)
+- [LeetCode Cookbook](https://leetcode-cn.com/leetbook/detail/leetcode-cookbook/)
 
 ## 其他资料
 
