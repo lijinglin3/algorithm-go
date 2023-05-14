@@ -9,11 +9,13 @@ import (
 )
 
 /*
-					10
-			5			11
-		4		6			12
-	2				9
-		3		8
+				10
+		5			11
+	4		6			12
+
+2				9
+
+	3		8
 */
 func TestDeleteNode(t *testing.T) {
 	example := "[10, 5, 11, 4, 6, null, 12, 2, null, null, 9, null, null, null, 3, 8]"

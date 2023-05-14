@@ -4,14 +4,14 @@ import (
 	"fmt"
 )
 
-//Node 二叉树的节点
+// Node 二叉树的节点
 type Node struct {
 	data  interface{}
 	left  *Node
 	right *Node
 }
 
-//NewNode 初始化一个节点
+// NewNode 初始化一个节点
 func NewNode(data interface{}) *Node {
 	return &Node{data: data}
 }
@@ -20,17 +20,17 @@ func (n *Node) String() string {
 	return fmt.Sprintf("v:%+v, left:%+v, right:%+v", n.data, n.left, n.right)
 }
 
-//BinaryTree 二叉树的结构体
+// BinaryTree 二叉树的结构体
 type BinaryTree struct {
 	root *Node
 }
 
-//NewBinaryTree 初始化一个二叉树
+// NewBinaryTree 初始化一个二叉树
 func NewBinaryTree(rootV interface{}) *BinaryTree {
 	return &BinaryTree{root: NewNode(rootV)}
 }
 
-//InOrderTraverse 使用递归方法的中序遍历
+// InOrderTraverse 使用递归方法的中序遍历
 func (bt *BinaryTree) InOrderTraverse() (result []interface{}) {
 	if left := bt.root.left; nil != left {
 		newBT := &BinaryTree{root: left}
@@ -47,7 +47,7 @@ func (bt *BinaryTree) InOrderTraverse() (result []interface{}) {
 	return
 }
 
-//PreOrderTraverse 使用递归方法的前序遍历
+// PreOrderTraverse 使用递归方法的前序遍历
 func (bt *BinaryTree) PreOrderTraverse() (result []interface{}) {
 	result = append(result, bt.root.data)
 
@@ -64,7 +64,7 @@ func (bt *BinaryTree) PreOrderTraverse() (result []interface{}) {
 	return
 }
 
-//PostOrderTraverse 使用递归方法的后序遍历
+// PostOrderTraverse 使用递归方法的后序遍历
 func (bt *BinaryTree) PostOrderTraverse() (result []interface{}) {
 	if left := bt.root.left; nil != left {
 		newBT := &BinaryTree{root: left}
@@ -80,7 +80,7 @@ func (bt *BinaryTree) PostOrderTraverse() (result []interface{}) {
 	return
 }
 
-//InOrderTraverseByStack 使用stack的中序遍历
+// InOrderTraverseByStack 使用stack的中序遍历
 func (bt *BinaryTree) InOrderTraverseByStack() (result []interface{}) {
 	stack := make([]*Node, 0)
 	n := bt.root
@@ -100,7 +100,7 @@ func (bt *BinaryTree) InOrderTraverseByStack() (result []interface{}) {
 	return
 }
 
-//PreOrderTraverseByStack 使用stack的前序遍历
+// PreOrderTraverseByStack 使用stack的前序遍历
 func (bt *BinaryTree) PreOrderTraverseByStack() (result []interface{}) {
 	stack := make([]*Node, 0)
 	n := bt.root
@@ -117,7 +117,7 @@ func (bt *BinaryTree) PreOrderTraverseByStack() (result []interface{}) {
 	return
 }
 
-//PostOrderTraverseByStack 使用stack的后序遍历
+// PostOrderTraverseByStack 使用stack的后序遍历
 func (bt *BinaryTree) PostOrderTraverseByStack() (result []interface{}) {
 	var pre *Node
 	n := bt.root
@@ -140,7 +140,7 @@ func (bt *BinaryTree) PostOrderTraverseByStack() (result []interface{}) {
 	return
 }
 
-//PostOrderTraverseByTwoStack 使用两个stack的后序遍历
+// PostOrderTraverseByTwoStack 使用两个stack的后序遍历
 func (bt *BinaryTree) PostOrderTraverseByTwoStack() (result []interface{}) {
 	n := bt.root
 	stack1 := []*Node{n}
@@ -163,13 +163,13 @@ func (bt *BinaryTree) PostOrderTraverseByTwoStack() (result []interface{}) {
 	return
 }
 
-//BinarySearchTree 二叉搜索树
+// BinarySearchTree 二叉搜索树
 type BinarySearchTree struct {
 	*BinaryTree
 	CompareFunc func(v, nodeV interface{}) int
 }
 
-//NewBinarySearchTree 初始化二叉搜索树
+// NewBinarySearchTree 初始化二叉搜索树
 func NewBinarySearchTree(rootV interface{}, compareFunc func(v, nodeV interface{}) int) *BinarySearchTree {
 	return &BinarySearchTree{
 		BinaryTree:  NewBinaryTree(rootV),
@@ -177,7 +177,7 @@ func NewBinarySearchTree(rootV interface{}, compareFunc func(v, nodeV interface{
 	}
 }
 
-//Insert 插入一个值到二叉搜索树中
+// Insert 插入一个值到二叉搜索树中
 func (bst *BinarySearchTree) Insert(v interface{}) bool {
 	n := bst.root
 	for nil != n {
@@ -202,13 +202,13 @@ func (bst *BinarySearchTree) Insert(v interface{}) bool {
 	return false
 }
 
-//Delete 删除二叉搜索树中的某个值
+// Delete 删除二叉搜索树中的某个值
 func (bst *BinarySearchTree) Delete(v interface{}) bool {
 	// TODO
 	return false
 }
 
-//Find 查找二叉搜索树中的某个值
+// Find 查找二叉搜索树中的某个值
 func (bst *BinarySearchTree) Find(v interface{}) bool {
 	n := bst.root
 	for nil != n {
@@ -226,7 +226,7 @@ func (bst *BinarySearchTree) Find(v interface{}) bool {
 	return false
 }
 
-//Min 返回二叉搜索树中的最小值
+// Min 返回二叉搜索树中的最小值
 func (bst *BinarySearchTree) Min() interface{} {
 	n := bst.root
 	for nil != n {
@@ -238,7 +238,7 @@ func (bst *BinarySearchTree) Min() interface{} {
 	return n.data
 }
 
-//Max 返回二叉搜索树中的最大值
+// Max 返回二叉搜索树中的最大值
 func (bst *BinarySearchTree) Max() interface{} {
 	n := bst.root
 	for nil != n {

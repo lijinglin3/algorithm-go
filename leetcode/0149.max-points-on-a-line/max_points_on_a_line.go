@@ -1,6 +1,6 @@
 package leetcode
 
-//斜率，用最简约分子分母表示，为防止溢出，类型为int64
+// 斜率，用最简约分子分母表示，为防止溢出，类型为int64
 type slope struct {
 	m int64 //分子
 	n int64 //分母
@@ -30,7 +30,7 @@ func maxPoints(points [][]int) int {
 	return res
 }
 
-//根据两点求斜率
+// 根据两点求斜率
 func getSlope(p1, p2 []int) slope {
 	dx := int64(p1[0] - p2[0])
 	dy := int64(p1[1] - p2[1])

@@ -30,9 +30,7 @@ func PostorderByStack(root *Node) []int {
 		stack = stack[:last]
 
 		results = append(results, n.Val)
-		for i := range n.Children {
-			stack = append(stack, n.Children[i])
-		}
+		stack = append(stack, n.Children...)
 	}
 
 	for i, j := 0, len(results)-1; i < j; i, j = i+1, j-1 {

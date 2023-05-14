@@ -10,9 +10,10 @@ import (
 
 /*
 1
- 2
-  3
-   4
+
+	2
+	 3
+	  4
 */
 func TestIsBalanced(t *testing.T) {
 	cases := []*leetcode.TreeNode{
